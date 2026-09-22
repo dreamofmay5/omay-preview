@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>오월의꿈 | SEO·GEO·AEO 마케팅 전문기업</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{
+  font-family:'Pretendard';
+  src:url('assets/PretendardVariable.woff2') format('woff2');
+  font-weight:45 920;
+  font-style:normal;
+  font-display:swap;
+}
+:root{
+  --bg-dark:#0A1128;
+  --accent:#D4A94C;
+  --accent-hover:#E8C275;
+  --neutral:#929292;
+  --surface:#FFFFFF;
+  --line-light:rgba(16,16,16,0.14);
+  --line-dark:rgba(255,255,255,0.18);
+  --radius-md:8px;
+  --radius-input:6px;
+  --shadow-default:0 4px 12px rgba(0,0,0,0.15);
+  --dur-base:0.3s;
+  --dur-emph:0.6s;
+  --dur-hero:1.1s;
+  --ease:cubic-bezier(0.17,0.84,0.44,1);
+  --space-8:8px; --space-16:16px; --space-24:24px; --space-32:32px;
+  --space-48:48px; --space-64:64px; --space-96:96px; --space-128:128px;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg-dark);font-family:'Pretendard',system-ui,sans-serif;color:#fff;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3{font-family:'Pretendard',system-ui,sans-serif;margin:0;font-weight:700;}
+p{margin:0;}
+ul{margin:0;padding:0;list-style:none;}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);}
+.display{font-size:clamp(44px,6vw,84px);line-height:1.05;font-weight:800;letter-spacing:-0.025em;}
+.key{font-size:clamp(30px,3.7vw,54px);line-height:1.2;font-weight:800;letter-spacing:-0.025em;}
+.key em,.hl{font-style:normal;color:var(--accent);}
+.sub{font-size:clamp(20px,2.1vw,28px);line-height:1.35;font-weight:700;letter-spacing:-0.01em;}
+.lead{font-size:clamp(17px,1.5vw,20px);line-height:1.65;color:rgba(255,255,255,0.8);}
+.txt{font-size:17px;line-height:1.7;color:rgba(255,255,255,0.8);}
+.mute{color:rgba(255,255,255,0.62);}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 var(--space-32);border-radius:var(--radius-md);font-weight:700;font-size:15px;white-space:nowrap;cursor:pointer;border:1px solid transparent;font-family:inherit;transition:filter var(--dur-base) var(--ease), transform var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease), background var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease);}
+.btn-gold{background:var(--accent);color:var(--bg-dark);}
+.btn-gold:hover{background:var(--accent-hover);box-shadow:0 10px 24px rgba(212,169,76,0.28);}
+.btn-gold:active{transform:translateY(1px) scale(0.98);}
+.btn-ghost{color:#fff;border-color:rgba(255,255,255,0.4);background:transparent;}
+.btn-ghost:hover{background:rgba(255,255,255,0.08);border-color:var(--accent);}
+.btn-ghost:active{transform:translateY(1px) scale(0.98);}
+.tlink{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;color:var(--accent);transition:color var(--dur-base) var(--ease);}
+.tlink:hover{color:var(--accent-hover);}
+.tlink .ar{display:inline-block;transition:transform var(--dur-base) var(--ease);}
+.tlink:hover .ar{transform:translateX(4px);}
+
+/* header + mega menu */
+header.top{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(10,17,40,0.78);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-dark);}
+.hin{max-width:1360px;margin:0 auto;padding-inline:var(--space-32);display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav-links{display:flex;align-items:center;gap:var(--space-8);height:72px;}
+.nav-item{display:flex;align-items:center;height:72px;}
+.nl{position:relative;display:flex;align-items:center;gap:4px;height:72px;padding:0 var(--space-16);color:#fff;font-size:16px;font-weight:600;cursor:pointer;}
+.nl::after{content:"";position:absolute;left:var(--space-16);right:100%;bottom:18px;height:2px;background:var(--accent);transition:right var(--dur-base) var(--ease);}
+.nav-item:hover .nl::after,.nl:hover::after{right:var(--space-16);}
+.mega{position:fixed;left:0;right:0;top:72px;background:#fff;color:#101010;border-top:1px solid var(--line-light);box-shadow:0 30px 60px rgba(0,0,0,0.35);display:none;z-index:100;}
+.nav-item:hover .mega{display:block;}
+.mega-in{max-width:1120px;margin:0 auto;padding:var(--space-32);display:grid;grid-template-columns:1fr 1fr 1.1fr;gap:var(--space-48);}
+.mg-h{font-size:12px;font-weight:700;color:#4B4B4B;letter-spacing:0.08em;text-transform:uppercase;padding-bottom:10px;margin-bottom:8px;border-bottom:1px solid var(--line-light);}
+.mi{display:block;padding:10px 12px;margin:0 -12px;border-radius:var(--radius-md);transition:background var(--dur-base) var(--ease);cursor:pointer;}
+a.mi:hover{background:rgba(212,169,76,0.16);}
+.mi b{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:#101010;}
+.mi span{display:block;font-size:13px;color:#4B4B4B;margin-top:3px;}
+.mi.off{cursor:default;opacity:0.55;}
+.soon{font-style:normal;font-size:11px;font-weight:700;padding:2px 8px;border:1px solid rgba(16,16,16,0.3);border-radius:4px;color:#4B4B4B;}
+.tc{display:block;padding:var(--space-16) var(--space-24);border-radius:var(--radius-md);background:var(--bg-dark);color:#fff;margin-bottom:var(--space-16);transition:transform var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease);cursor:pointer;}
+a.tc:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(10,17,40,0.3);}
+.tc b{display:block;font-size:16px;font-weight:700;color:var(--accent);}
+.tc span{display:block;font-size:13px;color:rgba(255,255,255,0.75);margin-top:4px;}
+.tc.off{opacity:0.5;cursor:default;}
+
+/* immersive stage */
+#immersive{position:relative;height:1650vh;}
+.stage{position:sticky;top:0;height:100vh;height:100dvh;overflow:hidden;background:var(--bg-dark);}
+.decor{position:absolute;inset:0;pointer-events:none;}
+#deep{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 38%, #101C48 0%, #080D26 55%, #04060F 100%);opacity:0;}
+.neb{position:absolute;border-radius:50%;pointer-events:none;opacity:0;will-change:transform,opacity;}
+#neb1{width:90vmax;height:70vmax;left:-25vmax;top:-32vmax;background:radial-gradient(closest-side, rgba(58,92,210,0.34), rgba(58,92,210,0.09) 55%, transparent 76%);}
+#neb2{width:80vmax;height:60vmax;right:-32vmax;top:4vmax;background:radial-gradient(closest-side, rgba(112,86,196,0.22), rgba(112,86,196,0.05) 55%, transparent 76%);}
+#neb3{width:64vmax;height:42vmax;left:8vmax;bottom:-26vmax;background:radial-gradient(closest-side, rgba(212,169,76,0.22), rgba(212,169,76,0.05) 55%, transparent 76%);}
+#planet{position:absolute;left:50%;top:87%;width:170vw;height:170vw;margin-left:-85vw;border-radius:50%;background:radial-gradient(circle at 50% 6%, #12205A 0%, #070B22 36%, #03050F 70%);box-shadow:0 -1px 0 rgba(255,236,190,0.8), 0 -8px 44px rgba(212,169,76,0.42), 0 -50px 130px rgba(90,130,255,0.2), inset 0 22px 60px rgba(120,150,255,0.24);opacity:0;will-change:transform;}
+#space{position:absolute;inset:0;width:100%;height:100%;z-index:3;-webkit-mask-image:radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, #000 78%);mask-image:radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, #000 78%);}
+#flash{position:absolute;inset:0;z-index:3;background:radial-gradient(circle at 50% 50%, rgba(255,240,205,0.9), rgba(212,169,76,0.5) 30%, transparent 62%);opacity:0;}
+#seam{position:absolute;left:50%;top:0;bottom:0;z-index:3;width:2px;margin-left:-1px;background:linear-gradient(180deg,transparent 0%,rgba(255,240,205,0.95) 50%,transparent 100%);opacity:0;}
+.cur{position:absolute;top:0;bottom:0;width:50.3%;background:linear-gradient(180deg,#0B1330,#0A1128 60%,#080E22);z-index:2;will-change:transform;}
+#cur-l{left:0;box-shadow:inset -1px 0 0 rgba(212,169,76,0.55), 30px 0 70px rgba(0,0,0,0.5);}
+#cur-r{right:0;box-shadow:inset 1px 0 0 rgba(212,169,76,0.55), -30px 0 70px rgba(0,0,0,0.5);}
+.scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:96px var(--space-32) var(--space-48);visibility:hidden;opacity:0;will-change:transform,opacity;z-index:3;}
+.scene::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center, rgba(7,12,30,0.7) 0%, rgba(7,12,30,0.45) 50%, transparent 80%);z-index:-1;pointer-events:none;}
+.sc-in{width:100%;max-width:1120px;max-height:calc(100dvh - 150px);}
+.sc-scroll{overflow-y:auto;}
+#s-hero{visibility:visible;opacity:1;z-index:4;}
+#s-hero::before{display:none;}
+.hero-glow{position:absolute;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle, rgba(212,169,76,0.16), transparent 68%);top:-180px;right:-140px;pointer-events:none;z-index:-1;}
+.cue-line{position:absolute;left:50%;bottom:28px;width:1px;height:48px;background:rgba(255,255,255,0.55);animation:cueLine 2.2s var(--ease) infinite;}
+@keyframes cueLine{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+@keyframes heroUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+.hero-in{animation:heroUp var(--dur-hero) var(--ease) both;}
+@keyframes pulseRing{0%{transform:scale(0.55);opacity:0.55;}100%{transform:scale(1.7);opacity:0;}}
+@keyframes dashFlow{to{stroke-dashoffset:-20;}}
+@keyframes floatNode{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+@keyframes centerGlow{0%,100%{filter:drop-shadow(0 0 0 rgba(212,169,76,0));}50%{filter:drop-shadow(0 0 16px rgba(212,169,76,0.55));}}
+.pulse-ring{animation:pulseRing 2.6s ease-out infinite;}
+.pulse-line{stroke-dasharray:6 6;animation:dashFlow 1s linear infinite;}
+.orbit-node{animation:floatNode 4.5s ease-in-out infinite;}
+.center-node{animation:centerGlow 2.6s ease-in-out infinite;}
+.hero-grid .display{font-size:clamp(38px,4.6vw,68px);word-break:keep-all;}
+.hero-grid{display:grid;grid-template-columns:0.95fr 1.05fr;gap:var(--space-32);align-items:center;}
+
+.dots{position:absolute;left:24px;top:50%;transform:translateY(-50%);z-index:8;display:flex;flex-direction:column;gap:14px;}
+.dot{width:10px;height:10px;border-radius:50%;border:1px solid rgba(255,255,255,0.55);background:transparent;padding:0;cursor:pointer;transition:background var(--dur-base) var(--ease), transform var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease);}
+.dot:hover{border-color:var(--accent);}
+.dot.on{background:var(--accent);border-color:var(--accent);transform:scale(1.3);}
+
+.acr{font-size:clamp(72px,12vw,168px);line-height:0.92;font-weight:800;letter-spacing:-0.04em;color:#fff;}
+.acr-bar{display:block;width:64px;height:5px;background:var(--accent);margin-top:var(--space-24);}
+.two{display:grid;grid-template-columns:0.8fr 1.4fr;gap:var(--space-64);align-items:center;}
+.chips{display:flex;flex-wrap:wrap;gap:10px;}
+.chip{padding:10px 18px;border:1px solid rgba(212,169,76,0.7);border-radius:999px;font-size:clamp(17px,1.5vw,20px);font-weight:800;letter-spacing:-0.01em;color:#fff;background:rgba(212,169,76,0.12);box-shadow:0 0 18px rgba(212,169,76,0.14);}
+.chip i{font-style:normal;color:var(--accent);margin-right:1px;}
+
+.vs{display:grid;grid-template-columns:1fr auto 1.2fr;gap:var(--space-24);align-items:stretch;margin-top:var(--space-48);}
+.vs-arrow{display:flex;align-items:center;justify-content:center;}
+.vs-arrow svg{display:block;animation:arrowNudge 1.8s var(--ease) infinite;filter:drop-shadow(0 0 12px rgba(212,169,76,0.45));}
+@keyframes arrowNudge{0%,100%{transform:translateX(-4px);}50%{transform:translateX(6px);}}
+.vs-a{padding:var(--space-32);border:1px solid var(--line-dark);border-radius:var(--radius-md);}
+.vs-b{padding:var(--space-32);border:1px solid var(--accent);border-radius:var(--radius-md);background:rgba(212,169,76,0.12);}
+.vs-l{font-size:14px;font-weight:700;letter-spacing:0.06em;color:var(--neutral);}
+.vs-b .vs-l{color:var(--accent);}
+.vs-big{font-size:clamp(30px,3.6vw,50px);line-height:1.15;font-weight:800;margin-top:var(--space-16);letter-spacing:-0.02em;}
+.vs-a .vs-big{color:rgba(255,255,255,0.6);font-weight:700;}
+.vs-note{font-size:16px;line-height:1.6;margin-top:var(--space-16);color:rgba(255,255,255,0.75);}
+.badge{display:inline-block;margin-top:var(--space-24);padding:12px 22px;border-radius:var(--radius-md);background:var(--accent);color:var(--bg-dark);font-size:clamp(18px,1.9vw,26px);line-height:1.25;font-weight:800;letter-spacing:-0.01em;box-shadow:0 0 0 4px rgba(212,169,76,0.22), 0 12px 32px rgba(212,169,76,0.28);}
+.prompt{display:flex;align-items:center;gap:14px;margin-top:var(--space-32);max-width:780px;min-height:68px;padding:12px 14px 12px 22px;border:1px solid rgba(255,255,255,0.3);border-radius:999px;background:rgba(255,255,255,0.07);backdrop-filter:blur(6px);}
+.prompt-ic{flex:none;}
+.prompt-t{flex:1;min-width:0;font-size:clamp(17px,1.9vw,25px);font-weight:600;color:#fff;letter-spacing:-0.01em;line-height:1.3;}
+.caret{display:inline-block;width:2px;height:1.1em;margin-left:3px;background:var(--accent);vertical-align:-0.18em;animation:caretBlink 1s steps(1) infinite;}
+.prompt-go{flex:none;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--accent);opacity:0.35;transition:opacity var(--dur-emph) var(--ease), transform var(--dur-emph) var(--ease);}
+.prompt.done .prompt-go{opacity:1;transform:scale(1.08);}
+.prompt.done .caret{animation:none;opacity:0;}
+@keyframes caretBlink{0%,50%{opacity:1;}50.01%,100%{opacity:0;}}
+
+.hs-row{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-24);margin-top:var(--space-48);}
+.hs{padding-top:var(--space-24);border-top:3px solid var(--line-dark);opacity:0.5;transition:opacity var(--dur-emph) var(--ease), border-color var(--dur-emph) var(--ease);}
+.hs.on{opacity:1;border-top-color:var(--accent);}
+.hs .n{font-size:15px;font-weight:800;color:var(--accent);letter-spacing:0.06em;}
+.hs h3{font-size:clamp(26px,2.8vw,38px);margin-top:var(--space-8);font-weight:800;letter-spacing:-0.02em;}
+.hs p{margin-top:var(--space-16);font-size:16px;line-height:1.6;color:rgba(255,255,255,0.85);}
+.deliver{display:inline-block;margin-top:var(--space-16);padding:6px 12px;border:1px solid var(--accent);border-radius:var(--radius-md);font-size:13px;font-weight:700;color:var(--accent);}
+
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:var(--space-48);}
+.who-col{padding:var(--space-32) var(--space-32) var(--space-32) 0;border-top:3px solid var(--line-dark);}
+.who-col + .who-col{padding-left:var(--space-32);}
+.who-col h3{font-size:clamp(24px,2.6vw,34px);font-weight:800;letter-spacing:-0.02em;}
+
+.faq details{border-top:1px solid var(--line-dark);}
+.faq details:last-child{border-bottom:1px solid var(--line-dark);}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:var(--space-24);padding:var(--space-16) 0;font-size:clamp(17px,1.7vw,21px);font-weight:700;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";font-size:28px;font-weight:300;line-height:1;color:var(--accent);transition:transform var(--dur-base) var(--ease);}
+.faq details[open] summary::after{transform:rotate(45deg);}
+.faq .ans{padding:0 var(--space-32) var(--space-24) 0;font-size:16px;line-height:1.7;color:rgba(255,255,255,0.8);}
+
+.cgrid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:var(--space-64);align-items:start;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);}
+.field{display:flex;flex-direction:column;gap:6px;}
+.field label{font-size:13px;font-weight:600;color:rgba(255,255,255,0.9);}
+.inp{height:44px;padding:0 var(--space-16);border:1px solid var(--neutral);border-radius:var(--radius-input);background:rgba(255,255,255,0.06);color:#fff;font-family:inherit;font-size:15px;width:100%;}
+textarea.inp{height:auto;min-height:88px;padding:var(--space-16);resize:vertical;line-height:1.6;}
+select.inp option{color:#101010;background:#fff;}
+.inp:focus{outline:2px solid var(--accent);outline-offset:2px;border-color:var(--accent);}
+
+footer.ft{background:#070C1E;padding:var(--space-64) 0 var(--space-32);color:rgba(255,255,255,0.65);position:relative;z-index:5;}
+.flink{transition:color var(--dur-base) var(--ease);}
+.flink:hover{color:#fff;}
+.rail-btn{transition:transform var(--dur-base) var(--ease), filter var(--dur-base) var(--ease);cursor:pointer;}
+.rail-btn:hover{transform:translateX(-3px);filter:brightness(1.06);}
+.rail-btn:active{transform:scale(0.94);}
+
+/* flat mode: mobile / reduced motion */
+#immersive.flat{height:auto !important;}
+.flat .stage{position:relative;height:auto;overflow:visible;}
+.flat .decor,.flat .dots,.flat .cue-line{display:none !important;}
+.flat .scene{position:relative !important;inset:auto !important;opacity:1 !important;visibility:visible !important;transform:none !important;pointer-events:auto !important;padding:var(--space-96) var(--space-24);border-top:1px solid var(--line-dark);}
+.flat #s-hero{min-height:100vh;border-top:none;padding-top:128px;}
+.flat .sc-in{max-height:none;}
+.flat .sc-scroll{overflow:visible;}
+.flat .hs{opacity:1;}
+
+@media (prefers-reduced-motion: reduce){
+  .hero-in,.pulse-ring,.pulse-line,.orbit-node,.center-node,.cue-line,.vs-arrow svg,.caret{animation:none !important;}
+  .btn,.tlink .ar,.rail-btn,.hs{transition:none !important;}
+}
+@media (max-width:1100px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-visual{height:300px !important;}
+}
+@media (max-width:900px){
+  .nav-links,.hbtn{display:none !important;}
+  .two,.cgrid,.vs{grid-template-columns:1fr;gap:var(--space-32);}
+  .vs-arrow svg{transform:rotate(90deg);animation:none;}
+  .prompt{min-height:56px;}
+  .hs-row,.who-grid{grid-template-columns:1fr;gap:var(--space-24);}
+  .who-col + .who-col{padding-left:0;}
+  .who-col{padding-right:0;}
+  .frow{grid-template-columns:1fr;}
+  .float-rail{display:none !important;}
+}
+</style>
+</helmet>
+<div style="width:100%;">
+
+  <header class="top">
+    <div class="hin">
+      <a href="#s-hero" data-go="hero" style="display:flex;align-items:center;">
+        <img src="assets/logo-white.png" alt="오월의꿈" style="height:44px;width:auto;display:block;">
+      </a>
+      <nav class="nav-links">
+        <div class="nav-item">
+          <a href="#s-geo" data-go="geo" class="nl">GEO·AEO<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          <div class="mega"><div class="mega-in">
+            <div>
+              <div class="mg-h">GEO·AEO 이해하기</div>
+              <a href="GEO.dc.html" class="mi"><b>GEO 소개</b><span>AI 답변에 브랜드가 인용되는 원리</span></a>
+              <a href="AEO.dc.html" class="mi"><b>AEO 소개</b><span>질문의 정답 한 자리를 차지하는 법</span></a>
+              <a href="Glossary.dc.html" class="mi"><b>GEO·AEO 용어사전</b><span>처음 듣는 용어를 쉬운 말로</span></a>
+            </div>
+            <div>
+              <div class="mg-h">실무·서비스</div>
+              <a href="GEO-Check.dc.html" class="mi"><b>GEO 엔티티 체크</b><span>브랜드 인식·인용 준비도 자가 진단</span></a>
+              <a href="Crawler.dc.html" class="mi"><b>AI 크롤러 접근 점검</b><span>GPTBot 등 수집 봇 허용 여부 확인</span></a>
+              <a href="QContent.dc.html" class="mi"><b>질문형 콘텐츠 설계</b><span>AI가 인용하기 좋은 구조로 재구성</span></a>
+              <a href="Process.dc.html" class="mi"><b>GEO·AEO 운영 프로세스</b><span>진단부터 재측정까지</span></a>
+            </div>
+            <div>
+              <div class="mg-h">TOOLS</div>
+              <a href="GEO-Check.dc.html" class="tc"><b>GEO 엔티티 체크</b><span>AI가 우리 브랜드를 인용할 준비가 됐는지 100점 만점 자가 진단</span></a>
+              <a href="#s-contact" data-go="contact" class="tc"><b>무료 AI 노출 진단</b><span>우리 브랜드가 AI 답변에 나오는지 확인</span></a>
+              <div class="tc off"><b>AI 크롤러 체크 (준비 중)</b><span>사이트의 AI 수집 허용 상태 점검</span></div>
+            </div>
+          </div></div>
+        </div>
+        <div class="nav-item">
+          <a href="#s-seo" data-go="seo" class="nl">SEO<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          <div class="mega"><div class="mega-in">
+            <div>
+              <div class="mg-h">SEO 이해하기</div>
+              <a href="SEO.dc.html" class="mi"><b>SEO 소개</b><span>검색엔진최적화 기본과 E-E-A-T</span></a>
+              <a href="Insights.dc.html" class="mi"><b>검색 인사이트</b><span>SEO·GEO 관련 아티클 모음</span></a>
+              <a href="Glossary.dc.html" class="mi"><b>SEO 용어사전</b><span>실무 용어를 그림과 예시로</span></a>
+            </div>
+            <div>
+              <div class="mg-h">실무·서비스</div>
+              <a href="Keyword.dc.html" class="mi"><b>키워드·검색 의도 분석</b><span>고객이 실제로 찾는 질문 발굴</span></a>
+              <a href="TechSeo.dc.html" class="mi"><b>기술 SEO 점검</b><span>속도, 크롤링, 구조화 데이터 진단</span></a>
+              <a href="Process.dc.html" class="mi"><b>SEO 운영 프로세스</b><span>정기 리포트와 재진단</span></a>
+            </div>
+            <div>
+              <div class="mg-h">TOOLS</div>
+              <a href="#s-contact" data-go="contact" class="tc"><b>무료 SEO 진단</b><span>검색 노출 현황과 개선 우선순위 확인</span></a>
+              <div class="tc off"><b>키워드 분석 (준비 중)</b><span>검색량과 연관 키워드 조회</span></div>
+            </div>
+          </div></div>
+        </div>
+        <div class="nav-item">
+          <a href="WebBuild.dc.html" class="nl">홈페이지 제작<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          <div class="mega"><div class="mega-in">
+            <div>
+              <div class="mg-h">제작 서비스</div>
+              <a href="WebBuild.dc.html" class="mi"><b>홈페이지 제작 소개</b><span>검색·AI에 읽히는 홈페이지 설계</span></a>
+              <a href="Process.dc.html" class="mi"><b>제작 프로세스</b><span>기획부터 검색 최적화까지 한 흐름으로</span></a>
+              <a href="Portfolio.dc.html" class="mi"><b>포트폴리오</b><span>진행한 홈페이지 사례</span></a>
+              <a href="Industry.dc.html" class="mi"><b>업종별 제작</b><span>업종 특성에 맞춘 구조 설계</span></a>
+            </div>
+            <div>
+              <div class="mg-h">제작 이후</div>
+              <a href="Renewal.dc.html" class="mi"><b>홈페이지 리뉴얼</b><span>기존 사이트의 검색·AI 대응 개선</span></a>
+              <a href="Maintenance.dc.html" class="mi"><b>유지보수·운영</b><span>정기 점검과 콘텐츠 갱신</span></a>
+            </div>
+            <div>
+              <div class="mg-h">TOOLS</div>
+              <a href="#s-contact" data-go="contact" class="tc"><b>제작 상담 신청</b><span>목적과 예산에 맞는 구성을 안내</span></a>
+            </div>
+          </div></div>
+        </div>
+        <a href="Process.dc.html" class="nl">프로세스</a>
+        <a href="Insights.dc.html" class="nl">인사이트</a>
+        <a href="About.dc.html" class="nl">회사소개</a>
+      </nav>
+      <div class="hbtn" style="display:flex;align-items:center;gap:var(--space-8);">
+        <a href="#s-contact" data-go="contact" class="btn btn-ghost" style="height:40px;padding:0 var(--space-16);font-size:14px;">무료 AI 노출 진단</a>
+        <a href="#s-contact" data-go="contact" class="btn btn-gold" style="height:40px;padding:0 var(--space-24);font-size:14px;">컨설팅 상담</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="immersive">
+    <div class="stage">
+
+<div class="decor" aria-hidden="true">
+        <div id="deep"></div>
+        <div class="neb" id="neb1"></div>
+        <div class="neb" id="neb2"></div>
+        <div class="neb" id="neb3"></div>
+        <div id="planet"></div>
+        <div class="cur" id="cur-l"></div>
+        <div class="cur" id="cur-r"></div>
+        <canvas id="space"></canvas>
+        <div id="flash"></div>
+        <div id="seam"></div>
+      </div>
+
+      <div class="dots" role="navigation" aria-label="장면 이동">
+        <button type="button" class="dot on" data-go="hero" aria-label="처음"></button>
+        <button type="button" class="dot" data-go="seo" aria-label="SEO"></button>
+        <button type="button" class="dot" data-go="geo" aria-label="GEO"></button>
+        <button type="button" class="dot" data-go="aeo" aria-label="AEO"></button>
+        <button type="button" class="dot" data-go="shift" aria-label="달라진 검색 방식"></button>
+        <button type="button" class="dot" data-go="how" aria-label="프로세스"></button>
+        <button type="button" class="dot" data-go="who" aria-label="대상"></button>
+        <button type="button" class="dot" data-go="faq" aria-label="FAQ"></button>
+        <button type="button" class="dot" data-go="contact" aria-label="문의"></button>
+      </div>
+
+      <section id="s-hero" class="scene" aria-label="오월의꿈 소개">
+        <div class="hero-glow"></div>
+        <div class="sc-in hero-grid" style="max-width:1200px;">
+          <div style="display:flex;flex-direction:column;gap:var(--space-24);">
+            <span class="eyebrow hero-in" style="animation-delay:0.1s;">SEO · GEO · AEO</span>
+            <h1 class="display hero-in" style="animation-delay:0.25s;">고객은 이미<br>AI에게 묻고 있습니다</h1>
+            <p class="lead hero-in" style="max-width:500px;animation-delay:0.45s;">온라인 마케팅 15년 경력의 오월의꿈이, 검색창에서 AI 답변까지 브랜드가 발견되는 모든 자리를 설계합니다.</p>
+            <div class="hero-in" style="display:flex;gap:var(--space-16);flex-wrap:wrap;padding-top:var(--space-8);animation-delay:0.6s;">
+              <a href="#s-contact" data-go="contact" class="btn btn-gold">전문 컨설팅 상담 받기</a>
+              <a href="#s-seo" data-go="seo" class="btn btn-ghost">서비스 알아보기</a>
+            </div>
+          </div>
+          <div class="hero-visual hero-in" style="position:relative;height:min(68vh,620px);display:flex;align-items:center;justify-content:center;animation-delay:0.5s;">
+            <svg viewBox="0 0 420 420" role="img" aria-label="Google, ChatGPT, Perplexity, 네이버 AI, Gemini 등 여러 검색과 AI 채널이 오월의꿈 AI 마케팅으로 연결되는 다이어그램" style="height:100%;width:auto;max-width:100%;aspect-ratio:1/1;overflow:visible;">
+              <line x1="210" y1="215" x2="210" y2="55" class="pulse-line" stroke="rgba(255,255,255,0.34)" stroke-width="1.5" style="animation-delay:0s;"></line>
+              <line x1="210" y1="215" x2="362.2" y2="165.6" class="pulse-line" stroke="rgba(255,255,255,0.34)" stroke-width="1.5" style="animation-delay:0.15s;"></line>
+              <line x1="210" y1="215" x2="304" y2="344.4" class="pulse-line" stroke="rgba(255,255,255,0.34)" stroke-width="1.5" style="animation-delay:0.3s;"></line>
+              <line x1="210" y1="215" x2="116" y2="344.4" class="pulse-line" stroke="rgba(255,255,255,0.34)" stroke-width="1.5" style="animation-delay:0.45s;"></line>
+              <line x1="210" y1="215" x2="57.8" y2="165.6" class="pulse-line" stroke="rgba(255,255,255,0.34)" stroke-width="1.5" style="animation-delay:0.6s;"></line>
+              <circle class="pulse-ring" cx="210" cy="215" r="54" fill="none" stroke="#D4A94C" stroke-width="1.5" style="transform-box:fill-box;transform-origin:center;animation-delay:0s;"></circle>
+              <circle class="pulse-ring" cx="210" cy="215" r="54" fill="none" stroke="#D4A94C" stroke-width="1.5" style="transform-box:fill-box;transform-origin:center;animation-delay:0.9s;"></circle>
+              <circle class="pulse-ring" cx="210" cy="215" r="54" fill="none" stroke="#D4A94C" stroke-width="1.5" style="transform-box:fill-box;transform-origin:center;animation-delay:1.8s;"></circle>
+              <g class="center-node">
+                <circle cx="210" cy="215" r="54" fill="#D4A94C"></circle>
+                <text x="210" y="213" text-anchor="middle" font-size="17" font-weight="800" fill="#0A1128">오월의꿈</text>
+                <text x="210" y="234" text-anchor="middle" font-size="15" font-weight="700" fill="#0A1128">AI 마케팅</text>
+              </g>
+              <g class="orbit-node" style="animation-delay:0s;"><circle cx="210" cy="55" r="32" fill="#0E1839" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"></circle><circle cx="210" cy="55" r="5" fill="#D4A94C"></circle><text x="210" y="11" text-anchor="middle" font-size="16" font-weight="600" fill="rgba(255,255,255,0.95)">Google</text></g>
+              <g class="orbit-node" style="animation-delay:0.4s;"><circle cx="362.2" cy="165.6" r="32" fill="#0E1839" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"></circle><circle cx="362.2" cy="165.6" r="5" fill="#D4A94C"></circle><text x="362.2" y="121.6" text-anchor="middle" font-size="16" font-weight="600" fill="rgba(255,255,255,0.95)">ChatGPT</text></g>
+              <g class="orbit-node" style="animation-delay:0.8s;"><circle cx="304" cy="344.4" r="32" fill="#0E1839" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"></circle><circle cx="304" cy="344.4" r="5" fill="#D4A94C"></circle><text x="304" y="396.4" text-anchor="middle" font-size="16" font-weight="600" fill="rgba(255,255,255,0.95)">Perplexity</text></g>
+              <g class="orbit-node" style="animation-delay:1.2s;"><circle cx="116" cy="344.4" r="32" fill="#0E1839" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"></circle><circle cx="116" cy="344.4" r="5" fill="#D4A94C"></circle><text x="116" y="396.4" text-anchor="middle" font-size="16" font-weight="600" fill="rgba(255,255,255,0.95)">네이버 AI</text></g>
+              <g class="orbit-node" style="animation-delay:1.6s;"><circle cx="57.8" cy="165.6" r="32" fill="#0E1839" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"></circle><circle cx="57.8" cy="165.6" r="5" fill="#D4A94C"></circle><text x="57.8" y="121.6" text-anchor="middle" font-size="16" font-weight="600" fill="rgba(255,255,255,0.95)">Gemini</text></g>
+            </svg>
+          </div>
+        </div>
+        <div class="cue-line"></div>
+      </section>
+
+      <section id="s-seo" class="scene" aria-label="SEO">
+        <div class="sc-in two">
+          <div>
+            <div class="acr">SEO</div><span class="acr-bar"></span>
+            <p style="margin-top:var(--space-16);font-weight:700;font-size:18px;" class="mute">검색엔진최적화</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:var(--space-24);">
+            <p class="key">검색 결과 <em>첫 화면</em>에<br>보이게 만드는 일</p>
+            <p class="txt">누군가 '강남 치과'를 검색했을 때 우리 병원이 먼저 보이도록 정리합니다.</p>
+            <div class="chips"><span class="chip"><i>#</i>고객은_뭐라고_검색할까</span><span class="chip"><i>#</i>한_주제_끝까지_파기</span><span class="chip"><i>#</i>사이트_건강검진</span></div>
+            <a href="SEO.dc.html" class="tlink">SEO 가이드 보기 <span class="ar">→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="s-geo" class="scene" aria-label="GEO">
+        <div class="sc-in two">
+          <div>
+            <div class="acr">GEO</div><span class="acr-bar"></span>
+            <p style="margin-top:var(--space-16);font-weight:700;font-size:18px;" class="mute">생성형 엔진 최적화</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:var(--space-24);">
+            <p class="key">AI 답변 속에 <em>우리 이름</em>이<br>나오게 만드는 일</p>
+            <p class="txt">ChatGPT에게 치과를 추천해 달라고 물었을 때 언급될 가능성을 높입니다.</p>
+            <div class="chips"><span class="chip"><i>#</i>AI가_읽는_사이트</span><span class="chip"><i>#</i>어디서나_같은_브랜드</span><span class="chip"><i>#</i>AI가_믿는_근거</span></div>
+            <a href="GEO.dc.html" class="tlink">GEO 가이드 보기 <span class="ar">→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="s-aeo" class="scene" aria-label="AEO">
+        <div class="sc-in two">
+          <div>
+            <div class="acr">AEO</div><span class="acr-bar"></span>
+            <p style="margin-top:var(--space-16);font-weight:700;font-size:18px;" class="mute">답변 엔진 최적화</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:var(--space-24);">
+            <p class="key">질문의 <em>정답 한 자리</em>를<br>차지하게 만드는 일</p>
+            <p class="txt">음성 비서가 읽어 주는 한두 문장, 검색 결과 맨 위 요약 박스를 겨냥합니다.</p>
+            <div class="chips"><span class="chip"><i>#</i>질문에_바로_답하기</span><span class="chip"><i>#</i>한_문장_정답</span><span class="chip"><i>#</i>검색_맨_위_정답</span></div>
+            <a href="AEO.dc.html" class="tlink">AEO 가이드 보기 <span class="ar">→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="s-shift" class="scene" aria-label="달라진 검색 방식">
+        <div class="sc-in">
+          <p class="key" style="max-width:880px;">AI 답변 속에 없으면,<br><em>고객에게도 없는 브랜드</em>입니다</p>
+          <p class="lead" style="margin-top:var(--space-16);">정보를 찾는 길이 두 갈래가 되었습니다.</p>
+          <div class="vs">
+            <div class="vs-a">
+              <p class="vs-l">지금까지: 검색</p>
+              <p class="vs-big">링크 여러 개</p>
+              <p class="vs-note">목록을 열어 하나씩 비교하고 고릅니다.</p>
+            </div>
+            <div class="vs-arrow" aria-label="검색에서 AI 답변으로 바뀌었습니다" role="img">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none" aria-hidden="true"><circle cx="36" cy="36" r="34" stroke="#D4A94C" stroke-width="2"></circle><path d="M18 36h33M40 24l12 12-12 12" stroke="#D4A94C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+            <div class="vs-b">
+              <p class="vs-l">새로 열린 길: AI에게 묻기</p>
+              <p class="vs-big">답변 <span class="hl">1개</span></p>
+              <p class="vs-note">AI가 추천한 곳을 바로 확인하고 결정합니다.</p>
+              <span class="badge">브랜드가 언급되어야 하는 자리</span>
+            </div>
+          </div>
+          <div class="prompt" id="prompt" role="img" aria-label="AI에게 묻는 예시: 서울에서 홈페이지 제작 잘하는 업체 추천해줘">
+            <svg class="prompt-ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4A94C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"></path><path d="M18.5 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"></path></svg>
+            <span class="prompt-t" aria-hidden="true"><span id="typed"></span><span class="caret"></span></span>
+            <span class="prompt-go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A1128" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="s-how" class="scene" aria-label="프로세스">
+        <div class="sc-in">
+          <span class="eyebrow">How it works</span>
+          <p class="key" style="margin-top:var(--space-16);max-width:920px;">체계화된 <em>4단계 전문 프로세스</em>로<br>진행됩니다</p>
+          <p class="lead" style="margin-top:var(--space-16);max-width:680px;">브랜드 상황에 맞춰 조정하되, 단계와 산출물은 정해진 기준으로 관리합니다.</p>
+          <div class="hs-row">
+            <div class="hs on">
+              <span class="n">01</span><h3>진단</h3>
+              <p>지금 브랜드가 검색과 AI 답변 어디에 나오는지 확인</p>
+              <span class="deliver">현황 진단 리포트</span>
+            </div>
+            <div class="hs">
+              <span class="n">02</span><h3>전략</h3>
+              <p>채널별 우선순위와 실행 로드맵 수립</p>
+              <span class="deliver">채널별 로드맵</span>
+            </div>
+            <div class="hs">
+              <span class="n">03</span><h3>실행</h3>
+              <p>콘텐츠, 구조화 데이터, 사이트 구조를 함께 개선</p>
+              <span class="deliver">발행·적용 내역</span>
+            </div>
+            <div class="hs">
+              <span class="n">04</span><h3>측정</h3>
+              <p>순위, 유입, AI 언급을 기록하고 재진단</p>
+              <span class="deliver">정기 성과 리포트</span>
+            </div>
+          </div>
+          <a href="Process.dc.html" class="tlink" style="margin-top:var(--space-32);">프로세스 자세히 보기 <span class="ar">→</span></a>
+        </div>
+      </section>
+
+      <section id="s-who" class="scene" aria-label="대상">
+        <div class="sc-in">
+          <p class="key">이런 분들과 <em>함께합니다</em></p>
+          <p class="lead" style="margin-top:var(--space-16);">규모보다 지금 겪는 문제가 기준입니다.</p>
+          <div class="who-grid">
+            <div class="who-col">
+              <h3>브랜드 <span class="hl">대표·오너</span></h3>
+              <p class="txt" style="margin-top:var(--space-16);">AI 답변에서 우리 이름이 빠져 있어 고민인 분</p>
+              <a href="#s-contact" data-go="contact" class="tlink" style="margin-top:var(--space-24);">진단 문의 <span class="ar">→</span></a>
+            </div>
+            <div class="who-col">
+              <h3><span class="hl">마케팅</span> 담당자</h3>
+              <p class="txt" style="margin-top:var(--space-16);">SEO가 정체되었거나 보고할 근거 데이터가 필요한 분</p>
+              <a href="Process.dc.html" class="tlink" style="margin-top:var(--space-24);">측정 방식 보기 <span class="ar">→</span></a>
+            </div>
+            <div class="who-col">
+              <h3><span class="hl">대행사</span>·제작사</h3>
+              <p class="txt" style="margin-top:var(--space-16);">GEO·AEO를 함께 다룰 파트너가 필요한 동종 업계 분</p>
+              <a href="#s-contact" data-go="contact" class="tlink" style="margin-top:var(--space-24);">협업 문의 <span class="ar">→</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="s-faq" class="scene" aria-label="자주 묻는 질문">
+        <div class="sc-in sc-scroll" style="max-width:920px;">
+          <p class="key">자주 묻는 <em>질문</em></p>
+          <div class="faq" style="margin-top:var(--space-24);">
+            <details>
+              <summary>GEO와 SEO는 무엇이 다른가요?</summary>
+              <p class="ans">SEO는 검색 결과 목록에서 더 잘 보이게 하는 일이고, GEO는 AI가 만든 답변 안에서 언급되게 하는 일입니다. 앞의 것은 순위를, 뒤의 것은 인용 가능성을 다룹니다.</p>
+            </details>
+            <details>
+              <summary>ChatGPT 답변에 우리 브랜드가 나오게 할 수 있나요?</summary>
+              <p class="ans">특정 답변을 보장하는 방법은 없습니다. AI가 근거로 삼기 좋은 콘텐츠와 구조를 갖춰 언급될 가능성을 높이고, 실제로 어떻게 나오는지 반복 측정해 확인합니다.</p>
+            </details>
+            <details>
+              <summary>AI 크롤러가 우리 사이트를 막고 있는지 어떻게 알 수 있나요?</summary>
+              <p class="ans">robots.txt에서 GPTBot, PerplexityBot 등 AI 서비스의 수집 봇을 차단해 두었는지 확인합니다. 컨설팅 상담에서 이 항목을 가장 먼저 살펴봅니다.</p>
+            </details>
+            <details>
+              <summary>기존 홈페이지와 블로그를 그대로 쓸 수 있나요?</summary>
+              <p class="ans">대부분 그대로 출발할 수 있습니다. 콘텐츠를 질문 단위로 재구성하거나 구조화 데이터를 더하는 방식으로 개선하고, 구조 자체가 걸림돌일 때만 개편을 제안합니다.</p>
+            </details>
+            <details>
+              <summary>결과가 나오기까지 얼마나 걸리나요?</summary>
+              <p class="ans">업종과 현재 상태에 따라 달라 일괄적인 기간을 말씀드리기 어렵습니다. 진단 결과에 맞춰 우선순위와 예상 일정을 안내해 드립니다.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="s-contact" class="scene" aria-label="문의">
+        <div class="sc-in sc-scroll cgrid">
+          <div>
+            <span class="eyebrow">Contact</span>
+            <p class="key" style="margin-top:var(--space-16);">먼저 <em>지금 위치</em>부터<br>확인하세요</p>
+            <p class="lead" style="margin-top:var(--space-16);max-width:420px;">전문 컨설팅 상담을 신청하시면 담당자가 검색과 AI 답변 속 노출 현황을 살펴본 뒤 연락드립니다.</p>
+            <div style="margin-top:var(--space-32);display:flex;flex-direction:column;gap:var(--space-8);font-size:16px;color:rgba(255,255,255,0.7);">
+              <a href="tel:0222077773" style="color:inherit;">02-2207-7773</a>
+              <span>dreamofmay5@gmail.com</span>
+              <span>서울특별시 중랑구 중랑역로 47, 101동 201호(중화동)</span>
+            </div>
+          </div>
+          <div role="group" aria-label="전문 컨설팅 상담 신청" style="display:flex;flex-direction:column;gap:var(--space-16);">
+            <div class="frow">
+              <div class="field"><label for="f-brand">회사 또는 브랜드명</label><input id="f-brand" class="inp" type="text" autocomplete="organization"></div>
+              <div class="field"><label for="f-name">담당자명</label><input id="f-name" class="inp" type="text" autocomplete="name"></div>
+            </div>
+            <div class="frow">
+              <div class="field"><label for="f-contact">연락처 또는 이메일</label><input id="f-contact" class="inp" type="text" autocomplete="email"></div>
+              <div class="field"><label for="f-topic">관심 분야</label>
+                <select id="f-topic" class="inp">
+                  <option>SEO</option>
+                  <option>GEO·AEO</option>
+                  <option>홈페이지 제작</option>
+                  <option>협업·파트너십</option>
+                  <option>아직 잘 모르겠어요</option>
+                </select>
+              </div>
+            </div>
+            <div class="field"><label for="f-msg">문의 내용</label><textarea id="f-msg" class="inp"></textarea></div>
+            <button type="button" class="btn btn-gold" style="width:100%;">전문 컨설팅 상담 받기</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <footer class="ft">
+    <div style="max-width:1200px;margin:0 auto;padding-inline:var(--space-32);display:flex;flex-direction:column;gap:var(--space-32);">
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-32);align-items:flex-start;">
+        <div style="display:flex;flex-direction:column;gap:var(--space-16);max-width:360px;">
+          <img src="assets/logo-white.png" alt="오월의꿈" style="height:64px;width:auto;display:block;align-self:flex-start;">
+          <p style="font-size:14px;line-height:1.7;">15년 경력의 SEO · GEO · AEO 통합 마케팅 전문 기업</p>
+        </div>
+        <div style="display:flex;gap:var(--space-24);font-size:15px;flex-wrap:wrap;">
+          <a href="#s-seo" data-go="seo" class="flink">서비스</a>
+          <a href="Process.dc.html" class="flink">프로세스</a>
+          <a href="Insights.dc.html" class="flink">인사이트</a>
+          <a href="About.dc.html" class="flink">회사소개</a>
+        </div>
+      </div>
+      <p style="font-size:13px;line-height:1.8;color:rgba(255,255,255,0.55);margin:0;">주식회사 오월의꿈 · 대표 박정원 · 사업자등록번호 750-87-02195 · 대표전화 02-2207-7773<br>서울특별시 중랑구 중랑역로 47, 101동 201호(중화동) · dreamofmay5@gmail.com</p>
+      <div style="border-top:1px solid var(--line-dark);padding-top:var(--space-16);font-size:12px;color:rgba(255,255,255,0.45);">© 2026 오월의꿈. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <div class="float-rail" style="position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:70;display:flex;flex-direction:column;gap:10px;">
+    <a href="#s-contact" data-go="contact" class="rail-btn" style="width:72px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px 8px;border-radius:var(--radius-md);background:var(--surface);border:1px solid var(--line-light);color:var(--bg-dark);box-shadow:var(--shadow-default);">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A1128" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l4 4v14H7z"></path><path d="M15 3v4h4"></path><line x1="10" y1="12" x2="16" y2="12"></line><line x1="10" y1="16" x2="16" y2="16"></line></svg>
+      <span style="font-size:11px;font-weight:600;line-height:1.3;text-align:center;">상세<br>문의</span>
+    </a>
+    <a href="#s-contact" data-go="contact" class="rail-btn" style="width:72px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px 8px;border-radius:var(--radius-md);background:var(--accent);color:var(--bg-dark);box-shadow:0 10px 24px rgba(212,169,76,0.3);">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A1128" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.8-.9L3 20l1.1-4.2A8.4 8.4 0 0 1 3.5 11.5 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5z"></path></svg>
+      <span style="font-size:11px;font-weight:700;line-height:1.3;text-align:center;">간편<br>문의</span>
+    </a>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    const wrap = document.getElementById('immersive');
+    if (!wrap) return;
+    const $ = (id) => document.getElementById(id);
+    const heroEl = $('s-hero');
+    const curL = $('cur-l');
+    const curR = $('cur-r');
+    const flash = $('flash');
+    const seam = $('seam');
+    const deep = $('deep');
+    const neb = [$('neb1'), $('neb2'), $('neb3')];
+    const planet = $('planet');
+    const cv = $('space');
+    const ctx = cv.getContext('2d');
+    const dots = Array.from(wrap.querySelectorAll('.dot'));
+    const steps = Array.from(wrap.querySelectorAll('.hs'));
+
+    const CENTER = { hero: 0, seo: 2.35, geo: 3.85, aeo: 5.35, shift: 6.95, how: 9.2, who: 11.35, faq: 12.95, contact: 14.65 };
+    const S = [
+      { id: 's-seo', c: 2.35, h: 0.75 },
+      { id: 's-geo', c: 3.85, h: 0.75 },
+      { id: 's-aeo', c: 5.35, h: 0.75 },
+      { id: 's-shift', c: 6.95, h: 0.85 },
+      { id: 's-how', c: 9.2, h: 1.4 },
+      { id: 's-who', c: 11.35, h: 0.75 },
+      { id: 's-faq', c: 12.95, h: 0.85 },
+      { id: 's-contact', c: 14.65, h: 0.85, final: true }
+    ];
+    S.forEach((s) => { s.el = $(s.id); });
+    const TOTAL = 15.5;
+
+    const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+    const ss = (a, b, x) => { const t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };
+    const reduceMq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const isFlat = () => reduceMq.matches || window.innerWidth < 900;
+    let flat = isFlat();
+    wrap.classList.toggle('flat', flat);
+
+    // ---- space: layered stars, bright stars, connected network points, shooting star ----
+    let W = 0, H = 0, spVal = 0;
+    const rnd = (a, b) => a + Math.random() * (b - a);
+    const COLS = ['214,228,255', '255,236,200', '190,208,255', '255,250,240'];
+    const STARS = Array.from({ length: 240 }, () => ({
+      x: Math.random(), y: Math.random(), r: rnd(0.35, 1.25), a: rnd(0.25, 0.85),
+      ph: rnd(0, 6.28), sp: rnd(0.6, 2.2), f: [0.6, 1.4, 2.8][Math.floor(Math.random() * 3)],
+      c: COLS[Math.floor(Math.random() * COLS.length)]
+    }));
+    const BRIGHT = Array.from({ length: 7 }, () => ({ x: rnd(0.06, 0.94), y: rnd(0.08, 0.92), r: rnd(1.6, 2.6), ph: rnd(0, 6.28) }));
+    const NET = Array.from({ length: 90 }, () => ({ x: Math.random() * 2 - 1, y: Math.random() * 2 - 1, z: Math.random() }));
+    let shoot = null, nextShoot = 4000;
+
+    const sizeCanvas = () => {
+      const dpr = Math.min(2, window.devicePixelRatio || 1);
+      W = cv.clientWidth; H = cv.clientHeight;
+      cv.width = Math.max(1, Math.round(W * dpr)); cv.height = Math.max(1, Math.round(H * dpr));
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    const drawSpace = (u, t) => {
+      ctx.clearRect(0, 0, W, H);
+      ctx.globalAlpha = 0.35 + 0.65 * spVal;
+      STARS.forEach((s) => {
+        const yy = (((s.y * H - u * s.f * H * 0.045) % H) + H) % H;
+        const tw = 0.62 + 0.38 * Math.sin(t * 0.001 * s.sp + s.ph);
+        ctx.fillStyle = 'rgba(' + s.c + ',' + (s.a * tw) + ')';
+        if (s.r < 0.75) { ctx.fillRect(s.x * W, yy, 1, 1); }
+        else { ctx.beginPath(); ctx.arc(s.x * W, yy, s.r, 0, 6.283); ctx.fill(); }
+      });
+      BRIGHT.forEach((b) => {
+        const yy = (((b.y * H - u * H * 0.06) % H) + H) % H;
+        const x = b.x * W;
+        const tw = 0.7 + 0.3 * Math.sin(t * 0.0012 + b.ph);
+        const R = 26 * tw;
+        const g = ctx.createRadialGradient(x, yy, 0, x, yy, R);
+        g.addColorStop(0, 'rgba(255,244,214,' + (0.85 * tw) + ')');
+        g.addColorStop(0.25, 'rgba(255,220,150,' + (0.28 * tw) + ')');
+        g.addColorStop(1, 'rgba(255,220,150,0)');
+        ctx.fillStyle = g; ctx.fillRect(x - R, yy - R, R * 2, R * 2);
+        ctx.strokeStyle = 'rgba(255,240,205,' + (0.35 * tw) + ')'; ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.moveTo(x - R * 0.9, yy); ctx.lineTo(x + R * 0.9, yy); ctx.moveTo(x, yy - R * 0.9); ctx.lineTo(x, yy + R * 0.9); ctx.stroke();
+        ctx.fillStyle = 'rgba(255,255,255,' + tw + ')';
+        ctx.beginPath(); ctx.arc(x, yy, b.r, 0, 6.283); ctx.fill();
+      });
+
+      if (spVal > 0.02) {
+        const pts = [];
+        NET.forEach((p) => {
+          const zz = (((p.z - u * 0.09) % 1) + 1) % 1;
+          const k = 0.12 / (zz + 0.06);
+          const a = Math.min(1, (1 - zz) * 3) * Math.min(1, zz * 10) * spVal;
+          pts.push({ px: W / 2 + p.x * W * 0.55 * k, py: H / 2 + p.y * H * 0.55 * k, a: a, r: 0.6 + (1 - zz) * 2 });
+        });
+        for (let i = 0; i < pts.length; i++) {
+          const A = pts[i];
+          if (A.a < 0.02) continue;
+          for (let j = i + 1; j < pts.length; j++) {
+            const B = pts[j];
+            const dx = A.px - B.px, dy = A.py - B.py;
+            const d = Math.sqrt(dx * dx + dy * dy);
+            if (d < 140) {
+              ctx.strokeStyle = 'rgba(212,169,76,' + ((1 - d / 140) * 0.28 * Math.min(A.a, B.a)) + ')';
+              ctx.lineWidth = 1;
+              ctx.beginPath(); ctx.moveTo(A.px, A.py); ctx.lineTo(B.px, B.py); ctx.stroke();
+            }
+          }
+        }
+        pts.forEach((p) => {
+          if (p.a < 0.02) return;
+          ctx.fillStyle = 'rgba(255,238,200,' + (p.a * 0.9) + ')';
+          ctx.beginPath(); ctx.arc(p.px, p.py, p.r, 0, 6.283); ctx.fill();
+        });
+
+        if (!shoot && t > nextShoot) {
+          shoot = { x: rnd(0.15, 0.85) * W, y: rnd(0.05, 0.35) * H, vx: rnd(5, 8), vy: rnd(2.6, 4.2), life: 0 };
+        }
+        if (shoot) {
+          shoot.life += 1; shoot.x += shoot.vx; shoot.y += shoot.vy;
+          const al = Math.max(0, 1 - shoot.life / 55) * spVal;
+          const g = ctx.createLinearGradient(shoot.x, shoot.y, shoot.x - shoot.vx * 14, shoot.y - shoot.vy * 14);
+          g.addColorStop(0, 'rgba(255,240,205,' + al + ')');
+          g.addColorStop(1, 'rgba(255,240,205,0)');
+          ctx.strokeStyle = g; ctx.lineWidth = 1.6;
+          ctx.beginPath(); ctx.moveTo(shoot.x, shoot.y); ctx.lineTo(shoot.x - shoot.vx * 14, shoot.y - shoot.vy * 14); ctx.stroke();
+          if (shoot.life > 55) { shoot = null; nextShoot = t + rnd(6000, 11000); }
+        }
+      }
+    };
+
+    let target = 0, cur = null, lastU = -1;
+
+    // "AI에게 묻기" 예시 문장 타이핑: 해당 장면이 화면에 완전히 자리 잡고 스크롤이 멈춘 뒤에 시작한다.
+    const PROMPT = '서울에서 홈페이지 제작 잘하는 업체 추천해줘';
+    const typedEl = $('typed');
+    const promptBox = $('prompt');
+    let typeTimer = null, typedN = 0, shiftOp = 0, lastMoveT = 0;
+    const stopType = () => { if (typeTimer) { clearInterval(typeTimer); typeTimer = null; } };
+    const showTyped = () => { typedEl.textContent = PROMPT.slice(0, typedN); promptBox.classList.toggle('done', typedN >= PROMPT.length); };
+    const startType = () => {
+      if (typeTimer || typedN >= PROMPT.length) return;
+      typeTimer = setInterval(() => {
+        typedN++;
+        showTyped();
+        if (typedN >= PROMPT.length) stopType();
+      }, 62);
+    };
+    const resetType = () => { stopType(); typedN = 0; showTyped(); };
+    const showFullPrompt = () => { stopType(); typedN = PROMPT.length; showTyped(); };
+    this._stopType = stopType;
+
+    const readTarget = () => {
+      const vh = window.innerHeight;
+      const r = wrap.getBoundingClientRect();
+      return clamp(-r.top / vh, 0, TOTAL);
+    };
+
+    const render = (u) => {
+      const hp = ss(0.12, 0.7, u);
+      const ho = 1 - hp;
+      heroEl.style.opacity = String(ho);
+      heroEl.style.transform = 'scale(' + (1 + hp * 0.06) + ')';
+      heroEl.style.visibility = ho < 0.02 ? 'hidden' : 'visible';
+      heroEl.style.pointerEvents = ho > 0.5 ? 'auto' : 'none';
+
+      const e = ss(0.5, 1.7, u);
+      curL.style.transform = 'translate3d(' + (-e * 102) + '%,0,0)';
+      curR.style.transform = 'translate3d(' + (e * 102) + '%,0,0)';
+      const curVis = e >= 1 ? 'hidden' : 'visible';
+      curL.style.visibility = curVis; curR.style.visibility = curVis;
+      seam.style.opacity = String(ss(0.42, 0.85, u) * (1 - ss(1.2, 1.7, u)));
+      flash.style.opacity = String(Math.max(0, 1 - Math.abs(u - 1.25) / 0.6) * 0.42);
+
+      spVal = ss(0.9, 1.7, u);
+      deep.style.opacity = String(spVal);
+      neb[0].style.opacity = String(spVal * 0.95);
+      neb[1].style.opacity = String(spVal * 0.85);
+      neb[2].style.opacity = String(spVal * 0.9);
+      neb[0].style.transform = 'translate3d(' + (-u * 14) + 'px,' + (u * 9) + 'px,0) scale(' + (1 + u * 0.012) + ')';
+      neb[1].style.transform = 'translate3d(' + (u * 11) + 'px,' + (-u * 7) + 'px,0) scale(' + (1 + u * 0.01) + ')';
+      neb[2].style.transform = 'translate3d(' + (u * 8) + 'px,' + (-u * 12) + 'px,0)';
+      planet.style.opacity = String(spVal);
+      planet.style.transform = 'translate3d(0,' + ((1 - ss(1.1, 2.6, u)) * 40) + 'vh,0)';
+
+      let best = 0, bestOp = -1;
+      S.forEach((s, i) => {
+        const x = (u - s.c) / s.h;
+        let op = clamp((1 - Math.abs(x)) / 0.3, 0, 1);
+        let scl = 1 + 0.26 * x;
+        if (s.final && x > 0) { op = 1; scl = 1; }
+        s.el.style.opacity = String(op);
+        s.el.style.transform = 'scale(' + scl + ')';
+        s.el.style.visibility = op < 0.02 ? 'hidden' : 'visible';
+        s.el.style.pointerEvents = op > 0.6 ? 'auto' : 'none';
+        if (op > bestOp) { bestOp = op; best = i; }
+        if (s.id === 's-shift') shiftOp = op;
+      });
+      const active = u < 1.3 ? 0 : best + 1;
+      dots.forEach((d, i) => d.classList.toggle('on', i === active));
+
+      const hs = S[4];
+      const k = clamp(Math.floor((u - (hs.c - hs.h + 0.3)) / ((2 * hs.h - 0.6) / 4)), 0, 3);
+      steps.forEach((el, j) => el.classList.toggle('on', j === k));
+    };
+
+    const loop = (t) => {
+      this._raf = requestAnimationFrame(loop);
+      if (flat || document.hidden) return;
+      if (cur === null) cur = target;
+      cur += (target - cur) * 0.14;
+      if (Math.abs(target - cur) < 0.0008) cur = target;
+      if (cur !== lastU) { render(cur); lastU = cur; lastMoveT = t; }
+      if (shiftOp >= 0.98 && t - lastMoveT > 350) startType();
+      else if (shiftOp < 0.02) resetType();
+      drawSpace(cur, t);
+    };
+    const kick = () => { if (!flat) target = readTarget(); };
+    const onResize = () => {
+      const f = isFlat();
+      if (f !== flat) {
+        flat = f; wrap.classList.toggle('flat', flat);
+        if (flat) showFullPrompt(); else resetType();
+      }
+      if (!flat) sizeCanvas();
+      kick();
+    };
+    const goKey = (key) => {
+      if (flat) {
+        const el = document.getElementById(key === 'hero' ? 's-hero' : 's-' + key);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+      const top = wrap.getBoundingClientRect().top + window.scrollY + CENTER[key] * window.innerHeight;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    };
+    this._goHandlers = [];
+    document.querySelectorAll('[data-go]').forEach((el) => {
+      const h = (ev) => { ev.preventDefault(); goKey(el.getAttribute('data-go')); };
+      el.addEventListener('click', h);
+      this._goHandlers.push([el, h]);
+    });
+
+    this._kick = kick;
+    this._onResize = onResize;
+    window.addEventListener('scroll', kick, { passive: true });
+    window.addEventListener('resize', onResize);
+    if (reduceMq.addEventListener) reduceMq.addEventListener('change', onResize);
+    this._reduceMq = reduceMq;
+    sizeCanvas();
+    kick();
+    if (!flat) { render(target); lastU = target; cur = target; } else showFullPrompt();
+    this._raf = requestAnimationFrame(loop);
+  }
+  componentWillUnmount() {
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._stopType) this._stopType();
+    window.removeEventListener('scroll', this._kick);
+    window.removeEventListener('resize', this._onResize);
+    if (this._reduceMq && this._reduceMq.removeEventListener) this._reduceMq.removeEventListener('change', this._onResize);
+    (this._goHandlers || []).forEach((p) => p[0].removeEventListener('click', p[1]));
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

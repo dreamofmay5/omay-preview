@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>프로세스 | 오월의꿈</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+
+@font-face{
+  font-family:'Pretendard';
+  src:url('assets/PretendardVariable.woff2') format('woff2');
+  font-weight:45 920;
+  font-style:normal;
+  font-display:swap;
+}
+:root{
+  --bg-dark:#0A1128;
+  --accent:#D4A94C;
+  --accent-hover:#E8C275;
+  --neutral:#929292;
+  --surface:#FFFFFF;
+  --line-light:rgba(16,16,16,0.14);
+  --line-dark:rgba(255,255,255,0.18);
+  --radius-md:8px;
+  --radius-input:6px;
+  --shadow-default:0 4px 12px rgba(0,0,0,0.15);
+  --dur-base:0.3s;
+  --dur-emph:0.6s;
+  --dur-hero:1.1s;
+  --ease:cubic-bezier(0.17,0.84,0.44,1);
+  --space-8:8px; --space-16:16px; --space-24:24px; --space-32:32px;
+  --space-48:48px; --space-64:64px; --space-96:96px; --space-128:128px;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg-dark);font-family:'Pretendard',system-ui,sans-serif;color:#fff;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3{font-family:'Pretendard',system-ui,sans-serif;margin:0;font-weight:700;}
+p{margin:0;}
+ul{margin:0;padding:0;list-style:none;}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);}
+.display{font-size:clamp(44px,6vw,84px);line-height:1.05;font-weight:800;letter-spacing:-0.025em;}
+.key{font-size:clamp(30px,3.7vw,54px);line-height:1.2;font-weight:800;letter-spacing:-0.025em;}
+.key em,.hl{font-style:normal;color:var(--accent);}
+.sub{font-size:clamp(20px,2.1vw,28px);line-height:1.35;font-weight:700;letter-spacing:-0.01em;}
+.lead{font-size:clamp(17px,1.5vw,20px);line-height:1.65;color:rgba(255,255,255,0.8);}
+.txt{font-size:17px;line-height:1.7;color:rgba(255,255,255,0.8);}
+.mute{color:rgba(255,255,255,0.62);}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 var(--space-32);border-radius:var(--radius-md);font-weight:700;font-size:15px;white-space:nowrap;cursor:pointer;border:1px solid transparent;font-family:inherit;transition:filter var(--dur-base) var(--ease), transform var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease), background var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease);}
+.btn-gold{background:var(--accent);color:var(--bg-dark);}
+.btn-gold:hover{background:var(--accent-hover);box-shadow:0 10px 24px rgba(212,169,76,0.28);}
+.btn-gold:active{transform:translateY(1px) scale(0.98);}
+.btn-ghost{color:#fff;border-color:rgba(255,255,255,0.4);background:transparent;}
+.btn-ghost:hover{background:rgba(255,255,255,0.08);border-color:var(--accent);}
+.btn-ghost:active{transform:translateY(1px) scale(0.98);}
+.tlink{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;color:var(--accent);transition:color var(--dur-base) var(--ease);}
+.tlink:hover{color:var(--accent-hover);}
+.tlink .ar{display:inline-block;transition:transform var(--dur-base) var(--ease);}
+.tlink:hover .ar{transform:translateX(4px);}
+
+/* header + mega menu */
+header.top{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(10,17,40,0.78);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-dark);}
+.hin{max-width:1360px;margin:0 auto;padding-inline:var(--space-32);display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav-links{display:flex;align-items:center;gap:var(--space-8);height:72px;}
+.nav-item{display:flex;align-items:center;height:72px;}
+.nl{position:relative;display:flex;align-items:center;gap:4px;height:72px;padding:0 var(--space-16);color:#fff;font-size:16px;font-weight:600;cursor:pointer;}
+.nl::after{content:"";position:absolute;left:var(--space-16);right:100%;bottom:18px;height:2px;background:var(--accent);transition:right var(--dur-base) var(--ease);}
+.nav-item:hover .nl::after,.nl:hover::after{right:var(--space-16);}
+.mega{position:fixed;left:0;right:0;top:72px;background:#fff;color:#101010;border-top:1px solid var(--line-light);box-shadow:0 30px 60px rgba(0,0,0,0.35);display:none;z-index:100;}
+.nav-item:hover .mega{display:block;}
+.mega-in{max-width:1120px;margin:0 auto;padding:var(--space-32);display:grid;grid-template-columns:1fr 1fr 1.1fr;gap:var(--space-48);}
+.mg-h{font-size:12px;font-weight:700;color:#4B4B4B;letter-spacing:0.08em;text-transform:uppercase;padding-bottom:10px;margin-bottom:8px;border-bottom:1px solid var(--line-light);}
+.mi{display:block;padding:10px 12px;margin:0 -12px;border-radius:var(--radius-md);transition:background var(--dur-base) var(--ease);cursor:pointer;}
+a.mi:hover{background:rgba(212,169,76,0.16);}
+.mi b{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:#101010;}
+.mi span{display:block;font-size:13px;color:#4B4B4B;margin-top:3px;}
+.mi.off{cursor:default;opacity:0.55;}
+.soon{font-style:normal;font-size:11px;font-weight:700;padding:2px 8px;border:1px solid rgba(16,16,16,0.3);border-radius:4px;color:#4B4B4B;}
+.tc{display:block;padding:var(--space-16) var(--space-24);border-radius:var(--radius-md);background:var(--bg-dark);color:#fff;margin-bottom:var(--space-16);transition:transform var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease);cursor:pointer;}
+a.tc:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(10,17,40,0.3);}
+.tc b{display:block;font-size:16px;font-weight:700;color:var(--accent);}
+.tc span{display:block;font-size:13px;color:rgba(255,255,255,0.75);margin-top:4px;}
+.tc.off{opacity:0.5;cursor:default;}
+
+
+
+
+body{background:#070B1E;}
+.cosmos{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(60vmax 45vmax at 10% -8%, rgba(58,92,210,0.30), transparent 70%), radial-gradient(55vmax 40vmax at 102% 14%, rgba(112,86,196,0.20), transparent 70%), radial-gradient(50vmax 34vmax at 30% 112%, rgba(212,169,76,0.15), transparent 70%), linear-gradient(180deg,#0A1128,#070B1E);}
+.stars{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.6;background-image:radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.75), transparent), radial-gradient(1px 1px at 90px 120px, rgba(255,240,205,0.65), transparent), radial-gradient(1.6px 1.6px at 160px 60px, rgba(255,255,255,0.85), transparent), radial-gradient(1px 1px at 230px 190px, rgba(190,208,255,0.65), transparent), radial-gradient(1px 1px at 300px 90px, rgba(255,255,255,0.55), transparent), radial-gradient(1px 1px at 60px 210px, rgba(255,255,255,0.5), transparent);background-size:340px 240px;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,0.35) 100%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,0.35) 100%);}
+.inp{height:44px;padding:0 16px;border:1px solid var(--neutral);border-radius:6px;background:rgba(255,255,255,0.06);color:#fff;font-family:inherit;font-size:15px;width:100%;}
+.inp:focus{outline:2px solid var(--accent);outline-offset:2px;border-color:var(--accent);}
+footer.ft{background:#070C1E;padding:64px 0 32px;color:rgba(255,255,255,0.65);position:relative;z-index:5;}
+.flink{transition:color .3s var(--ease);} .flink:hover{color:#fff;}
+.rail-btn{transition:transform .3s var(--ease), filter .3s var(--ease);cursor:pointer;}
+.rail-btn:hover{transform:translateX(-3px);filter:brightness(1.06);}
+.rail-btn:active{transform:scale(0.94);}
+
+.pg{position:relative;z-index:1;}
+.gw{max-width:1120px;margin:0 auto;padding-inline:32px;}
+.p-hero{padding:150px 0 24px;}
+.p-h1{font-size:clamp(32px,4.6vw,58px);line-height:1.15;font-weight:800;letter-spacing:-0.025em;margin:14px 0 0;max-width:920px;}
+.p-h1 em,.p-h2 em{font-style:normal;color:var(--accent);}
+.p-lead{font-size:clamp(17px,1.6vw,20px);line-height:1.7;color:rgba(255,255,255,0.8);max-width:740px;margin:20px 0 0;}
+.hashes{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
+.hash{padding:10px 18px;border:1px solid rgba(212,169,76,0.7);border-radius:999px;font-size:clamp(16px,1.4vw,19px);font-weight:800;letter-spacing:-0.01em;background:rgba(212,169,76,0.12);box-shadow:0 0 18px rgba(212,169,76,0.14);}
+.hash i{font-style:normal;color:var(--accent);margin-right:1px;}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;}
+.p-sec{padding:80px 0 0;}
+.p-h2{font-size:clamp(26px,3vw,40px);font-weight:800;letter-spacing:-0.02em;line-height:1.25;margin:0;}
+.p-sub{font-size:16px;line-height:1.75;color:rgba(255,255,255,0.72);margin:12px 0 0;max-width:720px;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px;}
+.card{padding:28px;border:1px solid rgba(255,255,255,0.18);border-radius:8px;background:rgba(255,255,255,0.04);transition:transform .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease);}
+.card:hover{transform:translateY(-4px);border-color:rgba(212,169,76,0.7);background:rgba(212,169,76,0.06);}
+.card .q{font-size:20px;font-weight:800;line-height:1.4;letter-spacing:-0.01em;}
+.card p{margin:12px 0 0;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.75);}
+.chk{display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px;margin-top:32px;}
+.chk-i{padding:24px 0;border-top:1px solid rgba(255,255,255,0.18);display:grid;grid-template-columns:40px 1fr;gap:12px;}
+.chk-n{font-size:15px;font-weight:800;color:var(--accent);letter-spacing:0.06em;padding-top:4px;}
+.chk-t{font-size:19px;font-weight:800;line-height:1.4;letter-spacing:-0.01em;}
+.chk-d{font-size:15px;line-height:1.7;color:rgba(255,255,255,0.75);margin-top:6px;}
+.chk-w{font-size:14px;line-height:1.6;color:var(--accent);font-weight:700;margin-top:8px;}
+.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:32px;}
+.st{border-top:3px solid rgba(212,169,76,0.75);padding-top:20px;}
+.st .n{font-size:14px;font-weight:800;letter-spacing:0.08em;color:var(--accent);}
+.st h3{font-size:clamp(22px,2.2vw,28px);font-weight:800;margin:6px 0 0;letter-spacing:-0.02em;}
+.st p{margin:12px 0 0;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.8);}
+.deliv{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:28px;}
+.deliv b{font-size:14px;letter-spacing:0.06em;color:rgba(255,255,255,0.7);margin-right:6px;}
+.deliv span{padding:8px 14px;border:1px solid var(--accent);border-radius:8px;font-size:14px;font-weight:700;color:var(--accent);}
+.codebox{margin-top:32px;border:1px solid rgba(255,255,255,0.18);border-radius:8px;background:#050818;overflow:hidden;}
+.codebox .cb-h{padding:10px 18px;border-bottom:1px solid rgba(255,255,255,0.14);font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:0.04em;}
+.codebox pre{margin:0;padding:18px 20px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:14px;line-height:1.85;color:#dfe6ff;overflow:auto;white-space:pre;}
+.c-ok{color:#7FD6A4;} .c-no{color:#F28B82;} .c-cm{color:#8a94b8;}
+.note2{margin-top:16px;font-size:14px;line-height:1.7;color:rgba(255,255,255,0.65);}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px;}
+.ba > div{padding:28px;border-radius:8px;}
+.ba-b{border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.03);}
+.ba-a{border:1px solid var(--accent);background:rgba(212,169,76,0.1);}
+.ba .lbl{font-size:13px;font-weight:800;letter-spacing:0.1em;color:rgba(255,255,255,0.6);}
+.ba-a .lbl{color:var(--accent);}
+.ba h4{margin:10px 0 0;font-size:20px;font-weight:800;line-height:1.4;}
+.ba-b h4{color:rgba(255,255,255,0.7);}
+.ba p{margin:10px 0 0;font-size:15px;line-height:1.75;color:rgba(255,255,255,0.78);}
+.anat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px;}
+.anat > div{padding:20px;border:1px solid rgba(255,255,255,0.18);border-radius:8px;background:rgba(255,255,255,0.04);}
+.anat b{display:block;font-size:13px;letter-spacing:0.08em;color:var(--accent);}
+.anat strong{display:block;font-size:17px;margin-top:6px;line-height:1.4;}
+.anat span{display:block;font-size:14px;line-height:1.65;color:rgba(255,255,255,0.72);margin-top:6px;}
+.tbl{width:100%;border-collapse:collapse;margin-top:32px;font-size:15px;}
+.tbl th,.tbl td{text-align:left;padding:16px 14px;border-bottom:1px solid rgba(255,255,255,0.18);vertical-align:top;line-height:1.6;}
+.tbl th{font-size:12px;letter-spacing:0.1em;color:var(--accent);font-weight:800;}
+.tbl td:first-child{font-weight:800;font-size:17px;white-space:nowrap;}
+.tbl td .q{display:inline-block;margin:2px 6px 2px 0;padding:3px 10px;border:1px solid rgba(212,169,76,0.6);border-radius:999px;font-size:14px;font-weight:700;}
+.tscroll{overflow-x:auto;}
+.vitals{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px;}
+.vital{padding:28px;border:1px solid var(--accent);border-radius:8px;background:rgba(212,169,76,0.08);}
+.vital .k{font-size:14px;font-weight:800;letter-spacing:0.08em;color:var(--accent);}
+.vital .v{font-size:clamp(34px,4vw,52px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;margin-top:8px;}
+.vital .v small{font-size:0.4em;font-weight:700;margin-left:4px;color:rgba(255,255,255,0.7);}
+.vital p{margin:10px 0 0;font-size:15px;line-height:1.65;color:rgba(255,255,255,0.78);}
+.callout2{margin-top:32px;padding:20px 24px;border-left:4px solid var(--accent);background:rgba(212,169,76,0.1);font-size:16px;line-height:1.7;font-weight:600;}
+.faq{margin-top:28px;}
+.faq details{border-top:1px solid rgba(255,255,255,0.18);}
+.faq details:last-child{border-bottom:1px solid rgba(255,255,255,0.18);}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:20px 0;font-size:clamp(17px,1.7vw,21px);font-weight:700;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";font-size:28px;font-weight:300;line-height:1;color:var(--accent);transition:transform .3s var(--ease);}
+.faq details[open] summary::after{transform:rotate(45deg);}
+.faq .ans{padding:0 32px 22px 0;font-size:16px;line-height:1.75;color:rgba(255,255,255,0.8);}
+.cta{margin:96px 0 0;padding:44px;border:1px solid var(--accent);border-radius:8px;background:rgba(212,169,76,0.1);display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;}
+.cta .btns{display:flex;gap:16px;flex-wrap:wrap;}
+.rel{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;}
+.rel b{font-size:14px;letter-spacing:0.06em;color:rgba(255,255,255,0.7);}
+.pg-end{height:96px;}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
+.rv.is-visible{opacity:1;transform:none;}
+/* glossary */
+/* crawler live check */
+.cc-box{margin-top:32px;padding:28px;border:1px solid var(--accent);border-radius:8px;background:rgba(212,169,76,0.08);}
+.cc-form{display:flex;gap:10px;margin-top:16px;max-width:760px;}
+.cc-form .inp{height:52px;font-size:16px;flex:1;min-width:0;}
+.cc-form .btn{height:52px;}
+.cc-msg{margin:10px 0 0;font-size:14px;color:#F28B82;font-weight:700;}
+.cc-hint{margin:10px 0 0;font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6;}
+.cc-res{margin-top:24px;}
+.cc-verdict{padding:18px 22px;border-radius:8px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.05);}
+.cc-verdict b{display:block;font-size:clamp(20px,2.2vw,26px);line-height:1.35;}
+.cc-verdict p{margin:8px 0 0;font-size:15px;line-height:1.65;color:rgba(255,255,255,0.78);}
+.cc-verdict.open{border-color:#7FD6A4;} .cc-verdict.partial{border-color:#F2C56B;} .cc-verdict.blocked{border-color:#F28B82;}
+.cc-tags{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:13px;white-space:nowrap;}
+.cc-tags.ok{color:#7FD6A4;} .cc-tags.warn{color:#F2C56B;} .cc-tags.error{color:#F28B82;} .cc-tags.info{color:#9DB7FF;}
+.cc-tags::before{display:inline-flex;width:20px;height:20px;border-radius:50%;align-items:center;justify-content:center;border:1.5px solid currentColor;font-size:12px;}
+.cc-tags.ok::before{content:"✓";} .cc-tags.warn::before{content:"!";} .cc-tags.error::before{content:"✕";} .cc-tags.info::before{content:"i";}
+.cc-t{width:100%;border-collapse:collapse;margin-top:16px;font-size:14px;}
+.cc-t th,.cc-t td{text-align:left;padding:10px;border-bottom:1px solid rgba(255,255,255,0.16);vertical-align:top;line-height:1.55;}
+.cc-t th{font-size:12px;letter-spacing:0.08em;color:var(--accent);}
+.cc-rec{margin-top:16px;padding:14px 16px;border-left:4px solid var(--accent);background:rgba(255,255,255,0.04);}
+.cc-rec b{display:block;font-size:15px;}
+.cc-rec p{margin:6px 0 0;font-size:14px;line-height:1.65;color:rgba(255,255,255,0.75);white-space:pre-line;}
+.cc-rec pre{margin:8px 0 0;padding:10px 12px;background:#050818;border-radius:6px;font-size:13px;line-height:1.6;color:#dfe6ff;overflow:auto;}
+@media (max-width:900px){ .cc-form{flex-direction:column;} .cc-box{padding:20px;} }
+.g-tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:32px;}
+.g-search{position:relative;flex:1;min-width:240px;max-width:460px;}
+.g-search .inp{height:52px;padding-left:46px;font-size:16px;}
+.g-search svg{position:absolute;left:16px;top:16px;pointer-events:none;}
+.g-tabs{display:flex;flex-wrap:wrap;gap:8px;}
+.g-tab{height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(255,255,255,0.3);background:transparent;color:#fff;font:inherit;font-size:15px;font-weight:800;cursor:pointer;transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease);}
+.g-tab:hover{border-color:var(--accent);}
+.g-tab[aria-pressed="true"]{background:var(--accent);color:var(--bg-dark);border-color:var(--accent);}
+.g-count{margin-top:16px;font-size:14px;color:rgba(255,255,255,0.65);}
+.terms{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:20px;}
+.term{padding:26px;border:1px solid rgba(255,255,255,0.18);border-radius:8px;background:rgba(255,255,255,0.04);transition:transform .3s var(--ease),border-color .3s var(--ease);}
+.term:hover{transform:translateY(-3px);border-color:rgba(212,169,76,0.7);}
+.term .cat{display:inline-block;padding:3px 10px;border:1px solid rgba(212,169,76,0.7);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:0.08em;color:var(--accent);}
+.term h3{margin:12px 0 0;font-size:24px;font-weight:800;letter-spacing:-0.02em;line-height:1.3;}
+.term h3 small{display:block;font-size:13px;font-weight:600;letter-spacing:0.02em;color:rgba(255,255,255,0.55);margin-top:2px;}
+.term .one{margin:12px 0 0;font-size:17px;font-weight:700;line-height:1.55;}
+.term .more{margin:10px 0 0;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.75);}
+.term .tip{margin:12px 0 0;padding-top:12px;border-top:1px dashed rgba(255,255,255,0.22);font-size:14px;line-height:1.65;font-weight:700;color:var(--accent);}
+.g-empty{margin-top:32px;padding:32px;text-align:center;border:1px dashed rgba(255,255,255,0.3);border-radius:8px;color:rgba(255,255,255,0.75);}
+@media (max-width:900px){
+  .nav-links,.hbtn{display:none !important;}
+  .float-rail{display:none !important;}
+  .gw{padding-inline:20px;}
+  .p-hero{padding-top:110px;}
+  .grid3,.vitals,.steps4,.ba,.anat,.terms,.chk{grid-template-columns:1fr;gap:20px;}
+  .chk{gap:0;}
+  .cta{padding:24px;}
+}
+@media (prefers-reduced-motion: reduce){
+  .rv{opacity:1 !important;transform:none !important;transition:none !important;}
+  .card,.term,.g-tab,.faq summary::after{transition:none !important;}
+}
+
+
+.stages-nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;}
+.stages-nav a{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border:1px solid rgba(255,255,255,0.3);border-radius:999px;font-size:16px;font-weight:800;transition:border-color .3s var(--ease),background .3s var(--ease);}
+.stages-nav a:hover{border-color:var(--accent);background:rgba(212,169,76,0.1);}
+.stages-nav a b{color:var(--accent);font-size:14px;letter-spacing:0.06em;}
+.stg{display:grid;grid-template-columns:180px 1fr;gap:32px;padding:44px 0;border-top:1px solid rgba(255,255,255,0.18);scroll-margin-top:96px;}
+.stg-n{font-size:clamp(64px,8vw,110px);font-weight:800;color:var(--accent);line-height:0.95;letter-spacing:-0.05em;}
+.stg-h{margin:0;font-size:clamp(26px,3vw,40px);font-weight:800;letter-spacing:-0.02em;}
+.stg-q{margin:10px 0 0;font-size:clamp(17px,1.7vw,21px);font-weight:600;color:rgba(255,255,255,0.8);line-height:1.55;}
+.stg-cols{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:22px;}
+.stg-cols h4{margin:0;font-size:13px;letter-spacing:0.1em;color:var(--accent);}
+.stg-cols ul{list-style:none;margin:10px 0 0;padding:0;}
+.stg-cols li{position:relative;padding:6px 0 6px 18px;font-size:15px;line-height:1.65;color:rgba(255,255,255,0.82);}
+.stg-cols li::before{content:"";position:absolute;left:0;top:15px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.scope{width:100%;border-collapse:collapse;margin-top:28px;font-size:15px;}
+.scope th,.scope td{text-align:left;padding:16px 14px;border-bottom:1px solid rgba(255,255,255,0.18);vertical-align:top;line-height:1.65;}
+.scope th{font-size:12px;letter-spacing:0.1em;color:var(--accent);font-weight:800;}
+.scope td:first-child{font-weight:800;font-size:17px;white-space:nowrap;}
+@media (max-width:900px){ .stg{grid-template-columns:1fr;gap:12px;padding:32px 0;} .stg-cols{grid-template-columns:1fr;gap:20px;} .scope td:first-child{white-space:normal;} }
+
+</style>
+</helmet>
+<div style="width:100%;">
+
+  <div class="cosmos" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+
+  <header class="top">
+    <div class="hin">
+      <a href="Main.dc.html" style="display:flex;align-items:center;">
+        <img src="assets/logo-white.png" alt="오월의꿈" style="height:44px;width:auto;display:block;">
+      </a>
+      <nav class="nav-links">
+        <div class="nav-item">
+          <a href="GEO.dc.html" class="nl">GEO·AEO<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          <div class="mega"><div class="mega-in">
+            <div>
+              <div class="mg-h">GEO·AEO 이해하기</div>
+              <a href="GEO.dc.html" class="mi"><b>GEO 소개</b><span>AI 답변에 브랜드가 인용되는 원리</span></a>
+              <a href="AEO.dc.html" class="mi"><b>AEO 소개</b><span>질문의 정답 한 자리를 차지하는 법</span></a>
+              <a href="Glossary.dc.html" class="mi"><b>GEO·AEO 용어사전</b><span>처음 듣는 용어를 쉬운 말로</span></a>
+            </div>
+            <div>
+              <div class="mg-h">실무·서비스</div>
+              <a href="GEO-Check.dc.html" class="mi"><b>GEO 엔티티 체크</b><span>브랜드 인식·인용 준비도 자가 진단</span></a>
+              <a href="Crawler.dc.html" class="mi"><b>AI 크롤러 접근 점검</b><span>GPTBot 등 수집 봇 허용 여부 확인</span></a>
+              <a href="QContent.dc.html" class="mi"><b>질문형 콘텐츠 설계</b><span>AI가 인용하기 좋은 구조로 재구성</span></a>
+              <a href="Process.dc.html" class="mi"><b>GEO·AEO 운영 프로세스</b><span>진단부터 재측정까지</span></a>
+            </div>
+            <div>
+              <div class="mg-h">TOOLS</div>
+              <a href="GEO-Check.dc.html" class="tc"><b>GEO 엔티티 체크</b><span>AI가 우리 브랜드를 인용할 준비가 됐는지 100점 만점 자가 진단</span></a>
+              <a href="#gc-cta" class="tc"><b>무료 AI 노출 진단</b><span>우리 브랜드가 AI 답변에 나오는지 확인</span></a>
+              <div class="tc off"><b>AI 크롤러 체크 (준비 중)</b><span>사이트의 AI 수집 허용 상태 점검</span></div>
+            </div>
+          </div></div>
+        </div>
+        <div class="nav-item">
+          <a href="SEO.dc.html" class="nl">SEO<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          <div class="mega"><div class="mega-in">
+            <div>
+              <div class="mg-h">SEO 이해하기</div>
+              <a href="SEO.dc.html" class="mi"><b>SEO 소개</b><span>검색엔진최적화 기본과 E-E-A-T</span></a>
+              <a href="Insights.dc.html" class="mi"><b>검색 인사이트</b><span>SEO·GEO 관련 아티클 모음</span></a>
+              <a href="Glossary.dc.html" class="mi"><b>SEO 용어사전</b><span>실무 용어를 그림과 예시로</span></a>
+            </div>
+            <div>
+              <div class="mg-h">실무·서비스</div>
+              <a href="Keyword.dc.html" class="mi"><b>키워드·검색 의도 분석</b><span>고객이 실제로 찾는 질문 발굴</span></a>
+              <a href="TechSeo.dc.html" class="mi"><b>기술 SEO 점검</b><span>속도, 크롤링, 구조화 데이터 진단</span></a>
+              <a href="Process.dc.html" class="mi"><b>SEO 운영 프로세스</b><span>정기 리포트와 재진단</span></a>
+            </div>
+            <div>
+              <div class="mg-h">TOOLS</div>
+              <a href="#gc-cta" class="tc"><b>무료 SEO 진단</b><span>검색 노출 현황과 개선 우선순위 확인</span></a>
+              <div class="tc off"><b>키워드 분석 (준비 중)</b><span>검색량과 연관 키워드 조회</span></div>
+            </div>
+          </div></div>
+        </div>
+        <div class="nav-item">
+          <a href="WebBuild.dc.html" class="nl">홈페이지 제작<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          <div class="mega"><div class="mega-in">
+            <div>
+              <div class="mg-h">제작 서비스</div>
+              <a href="WebBuild.dc.html" class="mi"><b>홈페이지 제작 소개</b><span>검색·AI에 읽히는 홈페이지 설계</span></a>
+              <a href="Process.dc.html" class="mi"><b>제작 프로세스</b><span>기획부터 검색 최적화까지 한 흐름으로</span></a>
+              <a href="Portfolio.dc.html" class="mi"><b>포트폴리오</b><span>진행한 홈페이지 사례</span></a>
+              <a href="Industry.dc.html" class="mi"><b>업종별 제작</b><span>업종 특성에 맞춘 구조 설계</span></a>
+            </div>
+            <div>
+              <div class="mg-h">제작 이후</div>
+              <a href="Renewal.dc.html" class="mi"><b>홈페이지 리뉴얼</b><span>기존 사이트의 검색·AI 대응 개선</span></a>
+              <a href="Maintenance.dc.html" class="mi"><b>유지보수·운영</b><span>정기 점검과 콘텐츠 갱신</span></a>
+            </div>
+            <div>
+              <div class="mg-h">TOOLS</div>
+              <a href="#gc-cta" class="tc"><b>제작 상담 신청</b><span>목적과 예산에 맞는 구성을 안내</span></a>
+            </div>
+          </div></div>
+        </div>
+        <a href="Process.dc.html" class="nl">프로세스</a>
+        <a href="Insights.dc.html" class="nl">인사이트</a>
+        <a href="About.dc.html" class="nl">회사소개</a>
+      </nav>
+      <div class="hbtn" style="display:flex;align-items:center;gap:var(--space-8);">
+        <a href="#gc-cta" class="btn btn-ghost" style="height:40px;padding:0 var(--space-16);font-size:14px;">무료 AI 노출 진단</a>
+        <a href="#gc-cta" class="btn btn-gold" style="height:40px;padding:0 var(--space-24);font-size:14px;">컨설팅 상담</a>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="pg">
+    <section class="p-hero">
+      <div class="gw">
+        <span class="eyebrow">PROCESS · 일하는 방식</span>
+        <h1 class="p-h1"><em>체계화된 전문 프로세스</em>로<br>진행됩니다</h1>
+        <p class="p-lead">감이나 반복 작업이 아니라, 상황 진단에서 성과 관리까지 정해진 단계와 산출물로 일합니다. 각 단계의 기준과 결과물을 미리 공유해 고객사가 언제든 진행 상황을 확인할 수 있습니다.</p>
+        <div class="hashes"><span class="hash"><i>#</i>상황_진단부터</span><span class="hash"><i>#</i>맞춤_플랜</span><span class="hash"><i>#</i>숫자로_확인하는_성과</span></div>
+        <div class="hero-btns">
+          <a href="#gc-cta" class="btn btn-gold">전문 컨설팅 상담 받기</a>
+        </div>
+      </div>
+    </section>
+    <section class="rv" style="padding-top:8px;">
+      <div class="gw">
+        <div class="stages-nav" aria-label="단계 바로가기"><a href="#stage-01"><b>01</b>상황 진단</a><a href="#stage-02"><b>02</b>맞춤 플랜 수립</a><a href="#stage-03"><b>03</b>타겟팅 설계</a><a href="#stage-04"><b>04</b>콘텐츠 · 구축</a><a href="#stage-05"><b>05</b>퍼포먼스 실행</a><a href="#stage-06"><b>06</b>성과 관리 · 개선</a></div>
+      </div>
+    </section>
+    <section class="p-sec">
+      <div class="gw">
+        <h2 class="p-h2">여섯 단계, <em>하나의 흐름</em></h2>
+        <p class="p-sub">단계마다 “하는 일, 확인하는 것, 산출물”이 정해져 있습니다. 규모와 목적에 따라 기간과 범위는 협의해 조정합니다.</p>
+        <div style="margin-top:32px;">
+    <div class="stg rv" id="stage-01">
+      <div><div class="stg-n">01</div></div>
+      <div>
+        <h3 class="stg-h">상황 진단</h3>
+        <p class="stg-q">“지금 우리는 어디에 서 있고, 무엇이 막고 있나요?”</p>
+        <div class="stg-cols">
+          <div><h4>하는 일</h4><ul><li>사업·서비스 이해: 목표, 핵심 고객, 수익 구조 정리</li><li>현재 채널 현황: 검색 노출, 광고, SNS, 홈페이지 상태</li><li>경쟁사와 비교한 노출·메시지 차이</li><li>측정 환경 점검: 서치 콘솔, 분석 도구, 전환 추적 여부</li><li>AI 답변에서 브랜드가 어떻게 언급되는지 확인</li></ul></div>
+          <div><h4>이것을 확인합니다</h4><ul><li>검색·AI 답변에서의 노출 현황</li><li>AI 크롤러 접근과 기술 SEO 상태</li><li>기존 콘텐츠의 정보 구조와 신뢰 신호</li><li>문의로 이어지는 경로가 실제로 측정되는지</li></ul></div>
+        </div>
+        <div class="deliv"><b>산출물</b><span>진단 리포트</span><span>기회·위험 요약</span><span>우선 개선 항목</span></div>
+      </div>
+    </div>
+    <div class="stg rv" id="stage-02">
+      <div><div class="stg-n">02</div></div>
+      <div>
+        <h3 class="stg-h">맞춤 플랜 수립</h3>
+        <p class="stg-q">“무엇을 먼저, 어떤 순서로, 어떤 기준으로 할까요?”</p>
+        <div class="stg-cols">
+          <div><h4>하는 일</h4><ul><li>목표(KPI) 설정: 문의 수, 전환율, 유입, 브랜드 언급 등</li><li>채널 조합 결정: SEO · GEO · AEO · 콘텐츠 · 광고 · 홈페이지</li><li>예산과 일정에 맞춘 우선순위 정리</li><li>단계별 로드맵과 역할 분담 합의</li><li>성공 기준과 리포팅 방식 확정</li></ul></div>
+          <div><h4>이것을 확인합니다</h4><ul><li>목표가 사업 성과와 직접 연결되는지</li><li>지금 가진 자원으로 실현 가능한지</li><li>단기 성과와 장기 기반을 균형 있게 배치했는지</li></ul></div>
+        </div>
+        <div class="deliv"><b>산출물</b><span>마케팅 플랜서</span><span>실행 로드맵</span><span>KPI 정의서</span></div>
+      </div>
+    </div>
+    <div class="stg rv" id="stage-03">
+      <div><div class="stg-n">03</div></div>
+      <div>
+        <h3 class="stg-h">타겟팅 설계</h3>
+        <p class="stg-q">“누구의, 어떤 순간의 질문에 답해야 하나요?”</p>
+        <div class="stg-cols">
+          <div><h4>하는 일</h4><ul><li>핵심 고객 정의와 페르소나 정리</li><li>고객 여정(인지 → 관심 → 비교 → 결정) 단계별 접점 지도</li><li>검색 의도와 질문 지도 작성: 검색창과 AI에게 묻는 문장 모두 포함</li><li>차별점(USP)과 메시지, 포지셔닝 정리</li><li>오디언스·지역·시간대 등 노출 조건 설정</li></ul></div>
+          <div><h4>이것을 확인합니다</h4><ul><li>고객이 실제로 쓰는 표현과 우리 메시지가 맞는지</li><li>여정 단계별로 비어 있는 콘텐츠가 어디인지</li><li>경쟁사와 구별되는 한 문장이 있는지</li></ul></div>
+        </div>
+        <div class="deliv"><b>산출물</b><span>고객 정의서</span><span>여정·질문 지도</span><span>메시지 프레임</span></div>
+      </div>
+    </div>
+    <div class="stg rv" id="stage-04">
+      <div><div class="stg-n">04</div></div>
+      <div>
+        <h3 class="stg-h">콘텐츠 · 구축</h3>
+        <p class="stg-q">“고객과 AI가 읽기 좋은 형태로 준비되어 있나요?”</p>
+        <div class="stg-cols">
+          <div><h4>하는 일</h4><ul><li>질문형 콘텐츠 제작과 기존 글 개선</li><li>홈페이지 구조·랜딩 페이지 설계 및 제작</li><li>구조화 데이터, 메타 정보, canonical 등 기술 세팅</li><li>광고 소재와 랜딩 페이지 연결</li><li>전환 추적 태그 설치와 테스트</li></ul></div>
+          <div><h4>이것을 확인합니다</h4><ul><li>핵심 답이 질문 바로 아래에 있는지</li><li>모바일에서 정상 표시되고 속도가 적절한지</li><li>문의 버튼까지의 동선이 짧은지</li><li>측정 태그가 정확히 작동하는지</li></ul></div>
+        </div>
+        <div class="deliv"><b>산출물</b><span>콘텐츠 캘린더</span><span>랜딩 페이지·콘텐츠</span><span>세팅 체크리스트</span></div>
+      </div>
+    </div>
+    <div class="stg rv" id="stage-05">
+      <div><div class="stg-n">05</div></div>
+      <div>
+        <h3 class="stg-h">퍼포먼스 실행</h3>
+        <p class="stg-q">“계획한 것을 실제로 돌리고, 숫자로 확인하고 있나요?”</p>
+        <div class="stg-cols">
+          <div><h4>하는 일</h4><ul><li>SEO · GEO · AEO 최적화 운영과 콘텐츠 발행</li><li>검색광고 등 유료 채널 운영 (계획에 포함된 경우)</li><li>A/B 테스트로 제목·소재·페이지 개선</li><li>주간 점검과 이슈 대응</li><li>검색·AI 답변 노출을 같은 질문으로 반복 측정</li></ul></div>
+          <div><h4>이것을 확인합니다</h4><ul><li>목표 대비 진행 상황</li><li>클릭률·전환율에서 낮은 구간</li><li>광고·콘텐츠별 전환 단가</li><li>비정상적인 수치 변동</li></ul></div>
+        </div>
+        <div class="deliv"><b>산출물</b><span>실행 기록</span><span>테스트 결과</span><span>주간 점검 메모</span></div>
+      </div>
+    </div>
+    <div class="stg rv" id="stage-06">
+      <div><div class="stg-n">06</div></div>
+      <div>
+        <h3 class="stg-h">성과 관리 · 개선</h3>
+        <p class="stg-q">“숫자가 무엇을 뜻하고, 다음에 무엇을 바꿔야 하나요?”</p>
+        <div class="stg-cols">
+          <div><h4>하는 일</h4><ul><li>월간 리포트: 지표 요약과 해석, 다음 달 실행안</li><li>KPI 대비 성과 검토와 원인 분석</li><li>잘 된 것은 확대하고 안 된 것은 원인을 찾아 수정</li><li>분기별 재진단과 로드맵 갱신</li><li>알고리즘·AI 서비스 변화에 따른 전략 조정</li></ul></div>
+          <div><h4>이것을 확인합니다</h4><ul><li>수치 뒤의 이유(왜 올랐고 왜 내렸는가)</li><li>한 번의 캡처가 아니라 시간 흐름의 변화</li><li>고객사 의사결정에 필요한 정보가 담겼는지</li></ul></div>
+        </div>
+        <div class="deliv"><b>산출물</b><span>월간 리포트</span><span>개선 제안서</span><span>분기 로드맵</span></div>
+      </div>
+    </div></div>
+      </div>
+    </section>
+    <section class="p-sec rv">
+      <div class="gw">
+        <h2 class="p-h2">실무 범위</h2>
+        <p class="p-sub">고객사의 상황에 맞춰 아래 영역을 조합해 플랜을 구성합니다.</p>
+        <div class="tscroll"><table class="scope"><thead><tr><th>영역</th><th>하는 일</th><th>대표 산출물</th></tr></thead><tbody><tr><td>SEO</td><td>검색 노출 기반 정비: 기술 점검, 키워드·검색 의도 분석, 콘텐츠 구조 개선</td><td>기술 점검 리포트, 키워드·의도 맵</td></tr><tr><td>GEO · AEO</td><td>AI 답변 속 브랜드 정비: AI 크롤러 접근, 엔티티·구조화 데이터, 질문형 콘텐츠</td><td>접근 점검표, 엔티티 정리표, 질문 지도</td></tr><tr><td>홈페이지 · 랜딩</td><td>목적에 맞는 구조 설계와 제작, 검색·AI 친화적 세팅, 전환 동선 개선</td><td>사이트 구조안, 랜딩 페이지</td></tr><tr><td>콘텐츠</td><td>고객 질문 기반의 기획·제작·갱신, 발행 일정 관리</td><td>콘텐츠 캘린더, 원고</td></tr><tr><td>퍼포먼스 광고</td><td>검색광고 등 유료 채널 세팅·운영·개선 (계획에 포함된 경우)</td><td>운영 기록, 소재·키워드 개선안</td></tr><tr><td>데이터 · 리포팅</td><td>측정 환경 구축, 대시보드, 월간 리포트와 다음 액션 제안</td><td>월간 리포트, 개선 제안서</td></tr></tbody></table></div>
+      </div>
+    </section>
+    <section class="p-sec rv">
+      <div class="gw">
+        <h2 class="p-h2">리포트는 이렇게 구성됩니다</h2>
+        <p class="p-sub">숫자만 나열하지 않고, 그 숫자가 무엇을 뜻하는지와 다음 행동까지 한 장에 담습니다.</p>
+        <div class="anat">
+        <div><b>① 요약</b><strong>이번 달 핵심 3줄</strong><span>바쁜 의사결정자가 1분 안에 읽을 수 있게 정리합니다.</span></div>
+        <div><b>② 지표</b><strong>KPI 대비 성과</strong><span>노출, 클릭, 전환, 문의, AI 답변 속 언급 등 합의한 지표를 원본 데이터 기준으로 보고합니다.</span></div>
+        <div><b>③ 해석</b><strong>왜 그런 결과가 나왔는지</strong><span>올라간 이유와 내려간 이유를 데이터와 실행 기록에서 찾습니다.</span></div>
+        <div><b>④ 다음 액션</b><strong>이번 달 할 일</strong><span>우선순위와 담당, 일정을 함께 제안합니다.</span></div>
+      </div>
+      <p class="note2">※ 한 번의 캡처가 아니라 같은 기준으로 반복 측정한 시간 흐름의 데이터를 기준으로 보고합니다.</p>
+      </div>
+    </section>
+    <section class="p-sec rv">
+      <div class="gw">
+        <h2 class="p-h2">시작 전에 준비해 주시면 좋은 것</h2>
+        <p class="p-sub">모두 갖추지 않아도 시작할 수 있습니다. 없는 것은 진단 단계에서 함께 정리합니다.</p>
+        <div class="chk"><div class="chk-i"><div class="chk-n">01</div><div><div class="chk-t">서비스·상품 정보</div><div class="chk-d">제공하는 서비스, 가격 구조, 강점과 한계, 고객이 자주 하는 질문을 알려 주세요.</div></div></div><div class="chk-i"><div class="chk-n">02</div><div><div class="chk-t">현재 사용 중인 채널</div><div class="chk-d">홈페이지, 블로그, SNS, 진행 중인 광고 계정과 운영 이력을 공유해 주세요.</div></div></div><div class="chk-i"><div class="chk-n">03</div><div><div class="chk-t">분석·관리 도구 권한</div><div class="chk-d">서치 콘솔, 분석 도구, 광고 계정 등의 열람 권한이 있으면 진단이 정확해집니다.</div><div class="chk-w">→ 권한은 필요한 범위만, 종료 시 회수합니다.</div></div></div><div class="chk-i"><div class="chk-n">04</div><div><div class="chk-t">의사결정 담당자</div><div class="chk-d">목표와 우선순위를 확정해 주실 담당자와 정기 점검 일정을 정합니다.</div></div></div></div>
+      </div>
+    </section>
+    <section class="p-sec rv">
+      <div class="gw">
+        <h2 class="p-h2">자주 묻는 질문</h2>
+        
+        <div class="faq"><details><summary>전체 기간은 얼마나 걸리나요?</summary><p class="ans">업종, 사이트 상태, 목표에 따라 달라 일괄적인 기간을 말씀드리기 어렵습니다. 진단 결과를 바탕으로 단계별 일정을 함께 정합니다.</p></details><details><summary>모든 단계를 다 해야 하나요?</summary><p class="ans">아닙니다. 이미 잘 갖춰진 부분은 건너뛰고 필요한 단계부터 진행할 수 있습니다. 다만 상황 진단은 어떤 경우에도 먼저 진행합니다.</p></details><details><summary>성과는 어떻게 확인하나요?</summary><p class="ans">합의한 KPI를 기준으로 월간 리포트를 드리고, 필요하면 주간 점검 메모도 공유합니다. 수치는 원본 데이터 기준으로 보고합니다.</p></details><details><summary>진행 중에 방향을 바꿀 수 있나요?</summary><p class="ans">네. 플랜은 고정된 계약서가 아니라 성과와 환경 변화에 따라 조정하는 로드맵입니다. 변경 사유와 영향을 함께 공유합니다.</p></details></div>
+      </div>
+    </section>
+    <div class="gw">
+      <div class="cta rv" id="gc-cta">
+        <div style="max-width:600px;">
+          <div class="sub">우리 상황에 맞는 플랜부터 확인해 보세요</div>
+          <p class="txt" style="margin-top:8px;">상황 진단에서 시작해 맞춤 플랜과 실행·성과 관리까지, 필요한 단계를 함께 정리해 드립니다.</p>
+        </div>
+        <div class="btns">
+          <a href="Main.dc.html" class="btn btn-gold">전문 컨설팅 상담 받기</a>
+          <a href="Main.dc.html" class="btn btn-ghost">메인 홈으로 가기 →</a>
+        </div>
+      </div>
+      <div class="rel"><b>함께 보면 좋은 페이지</b><a href="QContent.dc.html" class="tlink">질문형 콘텐츠 설계 <span class="ar">→</span></a><a href="Keyword.dc.html" class="tlink">키워드·검색 의도 분석 <span class="ar">→</span></a><a href="TechSeo.dc.html" class="tlink">기술 SEO 점검 <span class="ar">→</span></a><a href="Glossary.dc.html" class="tlink">용어사전 <span class="ar">→</span></a></div>
+    </div>
+    <div class="pg-end"></div>
+  </main>
+
+  <footer class="ft">
+    <div style="max-width:1200px;margin:0 auto;padding-inline:var(--space-32);display:flex;flex-direction:column;gap:var(--space-32);">
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-32);align-items:flex-start;">
+        <div style="display:flex;flex-direction:column;gap:var(--space-16);max-width:360px;">
+          <img src="assets/logo-white.png" alt="오월의꿈" style="height:64px;width:auto;display:block;align-self:flex-start;">
+          <p style="font-size:14px;line-height:1.7;">15년 경력의 SEO · GEO · AEO 통합 마케팅 전문 기업</p>
+        </div>
+        <div style="display:flex;gap:var(--space-24);font-size:15px;flex-wrap:wrap;">
+          <a href="SEO.dc.html" class="flink">서비스</a>
+          <a href="Process.dc.html" class="flink">프로세스</a>
+          <a href="Insights.dc.html" class="flink">인사이트</a>
+          <a href="About.dc.html" class="flink">회사소개</a>
+        </div>
+      </div>
+      <p style="font-size:13px;line-height:1.8;color:rgba(255,255,255,0.55);margin:0;">주식회사 오월의꿈 · 대표 박정원 · 사업자등록번호 750-87-02195 · 대표전화 02-2207-7773<br>서울특별시 중랑구 중랑역로 47, 101동 201호(중화동) · dreamofmay5@gmail.com</p>
+      <div style="border-top:1px solid var(--line-dark);padding-top:var(--space-16);font-size:12px;color:rgba(255,255,255,0.45);">© 2026 오월의꿈. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <div class="float-rail" style="position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:70;display:flex;flex-direction:column;gap:10px;">
+    <a href="#gc-cta" class="rail-btn" style="width:72px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px 8px;border-radius:var(--radius-md);background:var(--surface);border:1px solid var(--line-light);color:var(--bg-dark);box-shadow:var(--shadow-default);">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A1128" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l4 4v14H7z"></path><path d="M15 3v4h4"></path><line x1="10" y1="12" x2="16" y2="12"></line><line x1="10" y1="16" x2="16" y2="16"></line></svg>
+      <span style="font-size:11px;font-weight:600;line-height:1.3;text-align:center;">상세<br>문의</span>
+    </a>
+    <a href="#gc-cta" class="rail-btn" style="width:72px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px 8px;border-radius:var(--radius-md);background:var(--accent);color:var(--bg-dark);box-shadow:0 10px 24px rgba(212,169,76,0.3);">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A1128" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.8-.9L3 20l1.1-4.2A8.4 8.4 0 0 1 3.5 11.5 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5z"></path></svg>
+      <span style="font-size:11px;font-weight:700;line-height:1.3;text-align:center;">간편<br>문의</span>
+    </a>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2600}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+
+    const rv = Array.from(document.querySelectorAll('.rv'));
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) { rv.forEach((e) => e.classList.add('is-visible')); }
+    else {
+      this._io = new IntersectionObserver((es) => { es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-visible'); this._io.unobserve(e.target); } }); }, { threshold: 0.01, rootMargin: '0px 0px -40px 0px' });
+      rv.forEach((e) => this._io.observe(e));
+    }
+
+  }
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
