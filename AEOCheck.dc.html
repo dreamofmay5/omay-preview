@@ -5,12 +5,12 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>질문형 콘텐츠 설계 | 오월의꿈</title>
-<meta name="description" content="AI와 검색 요약이 가져가기 쉬운 질문형 콘텐츠 구조를 설계하는 방법을 소개합니다. 질문형 소제목부터 핵심 답 배치까지 실무 기준을 정리했습니다.">
+<title>AEO 체크리스트 | 오월의꿈</title>
+<meta name="description" content="URL을 입력하면 질문형 소제목, 핵심 답 배치, FAQ 구조화 데이터까지 확인해 100점 만점으로 알려 드리는 AEO 체크리스트 자동 진단 도구입니다.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="오월의꿈">
-<meta property="og:title" content="질문형 콘텐츠 설계 | 오월의꿈">
-<meta property="og:description" content="AI와 검색 요약이 가져가기 쉬운 질문형 콘텐츠 구조를 설계하는 방법을 소개합니다. 질문형 소제목부터 핵심 답 배치까지 실무 기준을 정리했습니다.">
+<meta property="og:title" content="AEO 체크리스트 | 오월의꿈">
+<meta property="og:description" content="URL을 입력하면 질문형 소제목, 핵심 답 배치, FAQ 구조화 데이터까지 확인해 100점 만점으로 알려 드리는 AEO 체크리스트 자동 진단 도구입니다.">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -247,6 +247,34 @@ footer.ft{background:#070C1E;padding:64px 0 32px;color:rgba(255,255,255,0.65);po
 }
 
 
+.ac-box{margin-top:32px;padding:28px;border:1px solid var(--accent);border-radius:8px;background:rgba(212,169,76,0.08);max-width:820px;}
+.ac-form{display:flex;gap:10px;margin-top:16px;}
+.ac-form .inp{flex:1;min-width:0;height:52px;font-size:16px;}
+.ac-form .btn{height:52px;}
+.ac-msg{margin:10px 0 0;font-size:14px;font-weight:700;color:#F28B82;}
+.ac-hint{margin:10px 0 0;font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6;}
+.ac-res{margin-top:24px;}
+.ac-top{display:flex;gap:28px;align-items:center;flex-wrap:wrap;padding:20px 24px;border:1px solid rgba(255,255,255,0.3);border-radius:8px;background:rgba(255,255,255,0.05);}
+.ac-score{font-size:64px;font-weight:800;line-height:1;letter-spacing:-0.03em;color:var(--accent);}
+.ac-score small{font-size:18px;font-weight:700;color:rgba(255,255,255,0.7);margin-left:4px;}
+.ac-grade{font-size:24px;font-weight:800;}
+.ac-meta{margin-top:4px;font-size:13px;color:rgba(255,255,255,0.65);word-break:break-all;}
+.ac-cats{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;margin-top:20px;}
+.ac-cat{font-size:14px;}
+.ac-cat div{display:flex;justify-content:space-between;font-weight:700;gap:8px;}
+.ac-cat b{color:var(--accent);white-space:nowrap;}
+.ac-cat span.d{display:block;font-size:12px;font-weight:500;color:rgba(255,255,255,0.55);margin-top:2px;}
+.ac-bar{height:6px;border-radius:3px;background:rgba(255,255,255,0.16);margin-top:5px;overflow:hidden;}
+.ac-bar i{display:block;height:100%;background:var(--accent);}
+.ac-h{margin:24px 0 8px;font-size:16px;font-weight:800;}
+.ac-iss{padding:12px 0;border-top:1px solid rgba(255,255,255,0.16);}
+.ac-iss .pr{display:inline-block;min-width:70px;text-align:center;padding:2px 8px;margin-right:8px;border:1.5px solid currentColor;border-radius:4px;font-size:11px;font-weight:800;letter-spacing:0.05em;}
+.ac-iss .pr.critical{color:#FF6B6B;} .ac-iss .pr.high{color:#F28B82;} .ac-iss .pr.medium{color:#F2C56B;} .ac-iss .pr.low{color:#9DB7FF;} .ac-iss .pr.info{color:rgba(255,255,255,0.6);}
+.ac-iss span.t{font-weight:700;font-size:15px;}
+.ac-iss p{margin:6px 0 0;font-size:13px;line-height:1.6;color:rgba(255,255,255,0.7);white-space:pre-line;}
+.ac-iss pre{margin:8px 0 0;padding:10px 12px;background:#050818;border-radius:6px;font-size:12.5px;line-height:1.6;color:#dfe6ff;white-space:pre-wrap;word-break:break-word;font-family:inherit;}
+@media (max-width:900px){ .ac-cats{grid-template-columns:1fr;} .ac-form{flex-direction:column;} .ac-box{padding:20px;} }
+
 </style>
 </helmet>
 <div style="width:100%;">
@@ -355,78 +383,71 @@ footer.ft{background:#070C1E;padding:64px 0 32px;color:rgba(255,255,255,0.65);po
   <main class="pg">
     <section class="p-hero">
       <div class="gw">
-        <span class="eyebrow">GEO·AEO · 실무 서비스</span>
-        <h1 class="p-h1">AI는 <em>질문 하나에 답 하나</em>로<br>콘텐츠를 가져갑니다</h1>
-        <p class="p-lead">사람들은 이제 키워드가 아니라 문장으로 묻습니다. 질문을 소제목으로 세우고 바로 아래에 답을 놓는 구조가 AI 답변과 검색 요약에 가장 잘 읽힙니다.</p>
-        <div class="hashes"><span class="hash"><i>#</i>질문에_바로_답하기</span><span class="hash"><i>#</i>한_문장_정답</span><span class="hash"><i>#</i>AI가_인용하는_구조</span></div>
+        <span class="eyebrow">AEO · 실무 서비스</span>
+        <h1 class="p-h1">이 페이지, <em>질문에 바로 답</em>하고 있나요?</h1>
+        <p class="p-lead">URL을 넣으면 소제목이 질문형인지, 그 아래 핵심 답이 있는지, FAQ 구조화 데이터와 최신성 표시까지 확인해 100점 만점으로 알려 드립니다.</p>
+        <div class="hashes"><span class="hash"><i>#</i>질문에_바로_답하기</span><span class="hash"><i>#</i>URL_한_번에_점검</span><span class="hash"><i>#</i>100점_자가_진단</span></div>
         <div class="hero-btns">
           <a href="#gc-cta" class="btn btn-gold">전문 컨설팅 상담 받기</a>
         </div>
       </div>
     </section>
-    <section class="p-sec rv">
+    <section class="rv" style="padding-top:8px;">
       <div class="gw">
-        <h2 class="p-h2">이런 콘텐츠라면 다시 설계가 필요합니다</h2>
-        <p class="p-sub">글의 양이 아니라 “질문에 답하는 구조”가 있는지가 기준입니다.</p>
-        <div class="grid3"><div class="card"><p class="q" style="margin:0;">글은 많은데 답변에는 안 나와요</p><p>주제는 좋아도 결론이 글 끝에 있으면 AI가 가져갈 문장을 찾기 어렵습니다. 결론을 앞으로 옮기는 것만으로도 읽히는 정도가 달라집니다.</p></div><div class="card"><p class="q" style="margin:0;">서비스 소개가 자랑 위주예요</p><p>“우리는 최고입니다”에는 고객의 궁금증에 대한 답이 없습니다. 비용, 기간, 진행 방식 같은 실제 질문에 답하는 문장이 필요합니다.</p></div><div class="card"><p class="q" style="margin:0;">FAQ 페이지가 형식적이에요</p><p>고객이 실제로 묻지 않는 질문을 채워 둔 FAQ는 도움이 되지 않습니다. 상담과 검색에서 나온 진짜 질문으로 다시 구성합니다.</p></div></div>
+        <div class="ac-box" id="ac-box">
+          <h2 class="sub" style="color:var(--accent);">지금 바로 점검해 보기</h2>
+          <p class="p-sub" style="margin-top:6px;">점검할 페이지 주소를 넣으면 질문형 구조와 FAQ 준비도를 확인합니다.</p>
+          <div class="ac-form">
+            <input id="ac-url" class="inp" type="text" inputmode="url" spellcheck="false" placeholder="https://example.com/blog/post/" aria-label="점검할 URL">
+            <button id="ac-go" type="button" class="btn btn-gold">점검 시작</button>
+          </div>
+          <p class="ac-msg" id="ac-msg" role="alert" hidden></p>
+          <p class="ac-hint">별도 점검 서버가 페이지를 읽어 분석합니다. 보통 10~30초 걸립니다. 서버 연결 전에는 점검 서버를 켜 둔 PC에서만 동작합니다.</p>
+          <div class="ac-res" id="ac-res" hidden></div>
+        </div>
       </div>
     </section>
     <section class="p-sec rv">
       <div class="gw">
-        <h2 class="p-h2">설계 전후, 이렇게 달라집니다</h2>
-        <p class="p-sub">같은 정보도 놓는 순서에 따라 AI와 사람이 읽는 방식이 달라집니다.</p>
-        <div class="ba">
-        <div class="ba-b"><div class="lbl">BEFORE</div><h4>소제목: 당사의 SEO 서비스 소개</h4><p>회사 소개와 장점이 세 문단 이어진 뒤, 마지막에 서비스 이야기가 나옵니다. 고객이 궁금한 답을 찾으려면 끝까지 읽어야 합니다.</p></div>
-        <div class="ba-a"><div class="lbl">AFTER</div><h4>소제목: 홈페이지 리뉴얼 때 SEO는 언제 챙겨야 하나요?</h4><p><b>기획 단계부터입니다.</b> 주소 구조, 제목과 설명, 구조화 데이터를 설계에 포함하면 오픈 후 수정 비용을 크게 줄일 수 있습니다. (이어서 근거와 사례)</p></div>
-      </div>
-      <p class="note2">※ 위 문장은 구조를 보여 주기 위한 예시입니다.</p>
-      </div>
-    </section>
-    <section class="p-sec rv">
-      <div class="gw">
-        <h2 class="p-h2">“핵심 답” 구조</h2>
-        <p class="p-sub">질문 하나를 이 네 칸으로 채우면 사람도 AI도 필요한 곳만 골라 읽을 수 있습니다.</p>
+        <h2 class="p-h2">무엇을 확인하나요</h2>
+        <p class="p-sub">6가지 기준으로 “질문에 바로 답하는 페이지”인지를 봅니다.</p>
         <div class="anat">
-        <div><b>① 질문형 소제목</b><strong>고객이 실제로 쓰는 문장</strong><span>검색창과 상담에서 나온 표현 그대로 사용합니다.</span></div>
-        <div><b>② 핵심 답</b><strong>결론부터 한두 문장</strong><span>어절 기준 40~60개 안팎을 권장 분량으로 봅니다.</span></div>
-        <div><b>③ 근거</b><strong>수치 · 출처 · 사례</strong><span>직접 확인한 1차 정보가 인용될 가능성을 높입니다.</span></div>
-        <div><b>④ 다음 질문</b><strong>관련 질문 링크</strong><span>이어서 궁금해할 질문으로 연결해 주제를 완성합니다.</span></div>
+        <div><b>① 질문형 소제목 · 30점</b><strong>소제목이 질문 문장인가</strong><span>“서비스 소개”가 아니라 “비용은 얼마인가요?”처럼 실제 질문 형태인지 봅니다.</span></div>
+        <div><b>② 핵심 답 배치 · 25점</b><strong>소제목 바로 아래 답이 있는가</strong><span>질문 다음 첫 문단이 결론 위주로 적절한 분량(약 12~100어절)인지 확인합니다.</span></div>
+        <div><b>③ FAQ 마크업 · 20점</b><strong>FAQPage 구조화 데이터가 있는가</strong><span>질문·답변이 기계도 읽을 수 있는 형태로 표기되어 있는지 봅니다.</span></div>
+        <div><b>④ 최신성 표시 · 10점</b><strong>작성일·수정일이 보이는가</strong><span>날짜 정보가 있으면 근거로 채택되기 쉽습니다.</span></div>
+        <div><b>⑤ 목록·표 활용 · 10점</b><strong>스캔하기 쉬운 구조인가</strong><span>단계·비교·체크리스트가 목록이나 표로 정리되어 있는지 봅니다.</span></div>
+        <div><b>⑥ 렌더링 안정성 · 5점</b><strong>서버 HTML에 답이 있는가</strong><span>자바스크립트 실행 후에만 본문이 나타나지 않는지 확인합니다.</span></div>
       </div>
-      </div>
-    </section>
-    <section class="p-sec rv">
-      <div class="gw">
-        <h2 class="p-h2">이렇게 설계합니다</h2>
-        
-        <div class="chk"><div class="chk-i"><div class="chk-n">01</div><div><div class="chk-t">실제 질문 발굴</div><div class="chk-d">상담 내용, 검색 자동완성, 연관 질문, 커뮤니티 문의에서 고객이 쓰는 질문을 모읍니다.</div><div class="chk-w">→ 만든 질문이 아니라 “들은 질문”이어야 합니다.</div></div></div><div class="chk-i"><div class="chk-n">02</div><div><div class="chk-t">질문 유형 분류</div><div class="chk-d">정의형(무엇인가), 방법형(어떻게), 비교형(무엇이 다른가), 비용·기간형, 추천형으로 나눕니다.</div><div class="chk-w">→ 유형마다 알맞은 답의 모양이 다릅니다.</div></div></div><div class="chk-i"><div class="chk-n">03</div><div><div class="chk-t">소제목 = 질문 문장</div><div class="chk-d">추상적인 제목 대신 질문 그대로를 소제목으로 씁니다.</div></div></div><div class="chk-i"><div class="chk-n">04</div><div><div class="chk-t">결론 우선 작성</div><div class="chk-d">질문 바로 아래에 답을 먼저 쓰고, 이유와 설명은 그 뒤에 붙입니다.</div></div></div><div class="chk-i"><div class="chk-n">05</div><div><div class="chk-t">1차 정보와 출처</div><div class="chk-d">자체 데이터, 진행 경험, 공식 자료 같은 원본 정보와 출처를 함께 적습니다.</div><div class="chk-w">→ 재가공한 글보다 근거로 채택될 가능성이 높습니다.</div></div></div><div class="chk-i"><div class="chk-n">06</div><div><div class="chk-t">FAQ 구조 정리</div><div class="chk-d">질문·답변 구조를 정리하고 FAQPage 구조화 데이터로 표기합니다.</div><div class="chk-w">→ Google의 FAQ 리치 결과는 현재 일부 사이트에만 노출되므로, 목적은 “기계가 읽기 좋은 구조”입니다.</div></div></div><div class="chk-i"><div class="chk-n">07</div><div><div class="chk-t">관련 질문 연결</div><div class="chk-d">질문끼리 내부 링크로 이어 하나의 주제 묶음(토픽 클러스터)을 만듭니다.</div></div></div><div class="chk-i"><div class="chk-n">08</div><div><div class="chk-t">작성일·담당자 표기</div><div class="chk-d">작성일, 최종 수정일, 작성자 정보를 밝히고 내용이 바뀌면 함께 갱신합니다.</div><div class="chk-w">→ 오래된 정보는 근거로 선택되기 어렵습니다.</div></div></div></div>
+      <p class="note2">※ 소제목이 질문 형태인지, 답변이 간결한지는 문장 구조를 보는 자동 판정이며 내용의 정확성까지 평가하지는 않습니다. 이 페이지에 해당하지 않는 항목(예: 소제목이 없는 페이지)은 감점 없이 배점에서 제외됩니다.</p>
       </div>
     </section>
     <section class="p-sec rv">
       <div class="gw">
-        <h2 class="p-h2">진행 방식</h2>
-        
-        <div class="steps4"><div class="st"><div class="n">STEP 01</div><h3>현황 진단</h3><p>기존 콘텐츠가 어떤 질문에 답하고 있고, 어떤 질문이 비어 있는지 확인합니다.</p></div><div class="st"><div class="n">STEP 02</div><h3>질문 지도</h3><p>고객 질문을 유형별로 정리해 우선순위를 정합니다.</p></div><div class="st"><div class="n">STEP 03</div><h3>작성·개선</h3><p>핵심 답과 근거를 갖춘 구조로 신규 작성하거나 기존 글을 고칩니다.</p></div><div class="st"><div class="n">STEP 04</div><h3>반복 측정</h3><p>같은 질문을 여러 AI와 검색에 반복 입력해 언급과 인용 변화를 기록합니다.</p></div></div><div class="deliv"><b>주요 산출물</b><span>질문 지도</span><span>콘텐츠 작성 템플릿</span><span>우선 개선 목록</span></div>
+        <h2 class="p-h2">점수만으로 부족하면</h2>
+        <p class="p-sub">자동 점검과 함께, 아래 항목을 직접 훑어보는 것도 도움이 됩니다.</p>
+        <div class="chk"><div class="chk-i"><div class="chk-n">01</div><div><div class="chk-t">질문 문장 그대로 쓰기</div><div class="chk-d">소제목을 “정의”, “특징” 대신 고객이 실제로 검색·질문하는 문장으로 바꿉니다.</div></div></div><div class="chk-i"><div class="chk-n">02</div><div><div class="chk-t">결론부터 쓰기</div><div class="chk-d">질문 바로 아래 첫 문장에 결론을 놓고, 이유와 사례는 뒤에 붙입니다.</div></div></div><div class="chk-i"><div class="chk-n">03</div><div><div class="chk-t">화면 FAQ와 마크업 일치</div><div class="chk-d">화면에 보이는 FAQ와 구조화 데이터의 질문·답변이 같은 내용인지 확인합니다.</div></div></div><div class="chk-i"><div class="chk-n">04</div><div><div class="chk-t">날짜 갱신 습관</div><div class="chk-d">내용을 고치면 눈에 보이는 수정일도 함께 갱신합니다.</div></div></div></div>
       </div>
     </section>
     <section class="p-sec rv">
       <div class="gw">
         <h2 class="p-h2">자주 묻는 질문</h2>
         
-        <div class="faq"><details><summary>질문형으로 쓰면 글이 딱딱해지지 않나요?</summary><p class="ans">소제목과 첫 문장만 질문·답변 형태로 잡고, 이어지는 설명은 자연스럽게 풀어 쓰면 됩니다. 오히려 독자가 원하는 곳을 빨리 찾게 됩니다.</p></details><details><summary>답은 얼마나 길게 써야 하나요?</summary><p class="ans">핵심 답은 한두 문장으로 짧게, 이유와 사례는 필요한 만큼 이어서 씁니다. 분량을 채우기보다 질문에 정확히 답하는 것이 우선입니다.</p></details><details><summary>이렇게 하면 AI 답변에 꼭 나오나요?</summary><p class="ans">특정 답변을 보장하는 방법은 없습니다. AI가 근거로 삼기 좋은 구조를 갖춰 언급될 가능성을 높이고, 실제 결과는 반복 측정으로 확인합니다.</p></details></div>
+        <div class="faq"><details><summary>점수가 낮으면 AI 답변에 못 나오나요?</summary><p class="ans">아닙니다. 이 점수는 구조적인 준비도를 보는 자체 진단이며, 특정 AI 서비스의 채택 여부를 보장하거나 측정하지 않습니다.</p></details><details><summary>블로그 글이 아니라 홈페이지도 점검할 수 있나요?</summary><p class="ans">네, 어떤 페이지든 점검할 수 있습니다. 다만 소제목이나 질문형 콘텐츠가 애초에 적은 페이지는 관련 항목이 낮게 나올 수 있습니다.</p></details><details><summary>GEO 엔티티 체크와는 뭐가 다른가요?</summary><p class="ans">GEO 엔티티 체크는 브랜드가 “누구인지”(Entity·구조화 데이터) 준비도를 보고, AEO 체크리스트는 “질문에 답하는 글의 구조”를 봅니다. 함께 확인하면 좋습니다.</p></details></div>
       </div>
     </section>
     <div class="gw">
       <div class="cta rv" id="gc-cta">
         <div style="max-width:600px;">
-          <h2 class="sub">고객의 질문에서 콘텐츠를 다시 시작해 보세요</h2>
-          <p class="txt" style="margin-top:8px;">지금 가진 콘텐츠를 진단하고, 질문 중심 구조로 바꾸는 우선순위를 정리해 드립니다.</p>
+          <h2 class="sub">질문형 구조부터 다시 점검해 보세요</h2>
+          <p class="txt" style="margin-top:8px;">자동 점검 결과를 바탕으로 우선순위와 실제 수정까지 함께 진행해 드립니다.</p>
         </div>
         <div class="btns">
           <a href="Main.dc.html" class="btn btn-gold">전문 컨설팅 상담 받기</a>
           <a href="Main.dc.html" class="btn btn-ghost">메인 홈으로 가기 →</a>
         </div>
       </div>
-      <div class="rel"><b>함께 보면 좋은 페이지</b><a href="Keyword.dc.html" class="tlink">키워드·검색 의도 분석 <span class="ar">→</span></a><a href="Crawler.dc.html" class="tlink">AI 크롤러 접근 점검 <span class="ar">→</span></a><a href="Glossary.dc.html" class="tlink">GEO·AEO·SEO 용어사전 <span class="ar">→</span></a></div>
+      <div class="rel"><b>함께 보면 좋은 페이지</b><a href="QContent.dc.html" class="tlink">질문형 콘텐츠 설계 <span class="ar">→</span></a><a href="GEO-Check.dc.html" class="tlink">GEO 엔티티 체크 <span class="ar">→</span></a><a href="AEO.dc.html" class="tlink">AEO 가이드 <span class="ar">→</span></a></div>
     </div>
     <div class="pg-end"></div>
   </main>
@@ -466,6 +487,79 @@ footer.ft{background:#070C1E;padding:64px 0 32px;color:rgba(255,255,255,0.65);po
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2600}}'>
 class Component extends DCLogic {
   componentDidMount() {
+
+    const API = (window.OMAY_CHECKER_API || 'http://localhost:3000/entity-check/api/').replace(/\/?$/, '/');
+    const $ = (id) => document.getElementById(id);
+    const urlEl = $('ac-url'), go = $('ac-go'), msg = $('ac-msg'), res = $('ac-res');
+    if (urlEl) {
+      const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+      const norm = (raw) => {
+        let v = (raw || '').trim();
+        if (!v) return null;
+        if (/^[a-z][a-z0-9+.-]*:/i.test(v) && !/^https?:\/\//i.test(v)) return null;
+        if (!/^https?:\/\//i.test(v)) v = 'https://' + v;
+        try { const u = new URL(v); return u.hostname.indexOf('.') > 0 ? u.toString() : null; } catch (e) { return null; }
+      };
+      const showMsg = (t) => { msg.textContent = t || ''; msg.hidden = !t; };
+      const PR = { critical: 'CRITICAL', high: 'HIGH', medium: 'MEDIUM', low: 'LOW', info: 'INFO' };
+      const paint = (r) => {
+        res.textContent = '';
+        const top = el('div', 'ac-top');
+        const sc = el('div', 'ac-score', String(r.score)); sc.appendChild(el('small', null, '/ 100'));
+        top.appendChild(sc);
+        const side = el('div');
+        side.appendChild(el('div', 'ac-grade', r.gradeLabel));
+        side.appendChild(el('div', 'ac-meta', r.finalUrl));
+        top.appendChild(side);
+        res.appendChild(top);
+        const cats = el('div', 'ac-cats');
+        r.categories.forEach((c) => {
+          const box = el('div', 'ac-cat');
+          const row = el('div');
+          row.appendChild(el('span', null, c.label));
+          row.appendChild(el('b', null, c.applicable ? c.score + ' / ' + c.max : '해당 없음'));
+          box.appendChild(row);
+          box.appendChild(el('span', 'd', c.detail));
+          const bar = el('div', 'ac-bar'); const i = el('i'); i.style.width = (c.applicable ? (c.score / c.max) * 100 : 0) + '%'; bar.appendChild(i); box.appendChild(bar);
+          cats.appendChild(box);
+        });
+        res.appendChild(cats);
+        if (r.issues.length) {
+          res.appendChild(el('div', 'ac-h', '개선 항목 (' + r.issues.length + '건)'));
+          r.issues.forEach((x) => {
+            const d = el('div', 'ac-iss');
+            d.appendChild(el('span', 'pr ' + x.priority, PR[x.priority]));
+            d.appendChild(el('span', 't', x.title));
+            d.appendChild(el('p', null, x.detail));
+            if (x.fix) {
+              if (x.fix.description) d.appendChild(el('p', null, x.fix.description));
+              if (x.fix.recommended) d.appendChild(el('pre', null, x.fix.recommended));
+            }
+            res.appendChild(d);
+          });
+        }
+        r.disclaimer.forEach((n) => res.appendChild(el('p', 'ac-hint', n)));
+        (r.notices || []).forEach((n) => res.appendChild(el('p', 'ac-hint', '※ ' + n)));
+        res.hidden = false;
+      };
+      let busy = false;
+      const run = async () => {
+        if (busy) return;
+        const u = norm(urlEl.value);
+        if (!u) { showMsg('올바른 http/https 주소를 입력해 주세요. 예: https://example.com/blog/post/'); return; }
+        showMsg(''); busy = true; go.disabled = true; go.textContent = '점검 중…'; res.hidden = true;
+        try {
+          const r = await fetch(API + 'aeo-check', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: u }) });
+          const j = await r.json().catch(() => ({}));
+          if (!r.ok) throw new Error((j.error && j.error.message) || '점검에 실패했습니다.');
+          paint(j);
+        } catch (e) {
+          showMsg(e && e.message && !/fetch|network|Failed/i.test(e.message) ? e.message : '점검 서버에 연결하지 못했습니다. 서버 연결 전에는 점검 서버를 켜 둔 PC에서만 동작합니다.');
+        } finally { busy = false; go.disabled = false; go.textContent = '점검 시작'; }
+      };
+      go.addEventListener('click', run);
+      urlEl.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') run(); });
+    }
 
     const rv = Array.from(document.querySelectorAll('.rv'));
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
