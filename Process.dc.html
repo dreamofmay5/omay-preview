@@ -256,7 +256,7 @@ footer.ft{background:#070C1E;padding:64px 0 32px;color:rgba(255,255,255,0.65);po
 .stg-h{margin:0;font-size:clamp(26px,3vw,40px);font-weight:800;letter-spacing:-0.02em;}
 .stg-q{margin:10px 0 0;font-size:clamp(17px,1.7vw,21px);font-weight:600;color:rgba(255,255,255,0.8);line-height:1.55;}
 .stg-cols{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:22px;}
-.stg-cols h4{margin:0;font-size:13px;letter-spacing:0.1em;color:var(--accent);}
+.stg-cols .stg-lbl{margin:0;font-size:13px;font-weight:700;letter-spacing:0.1em;color:var(--accent);}
 .stg-cols ul{list-style:none;margin:10px 0 0;padding:0;}
 .stg-cols li{position:relative;padding:6px 0 6px 18px;font-size:15px;line-height:1.65;color:rgba(255,255,255,0.82);}
 .stg-cols li::before{content:"";position:absolute;left:0;top:15px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
@@ -376,7 +376,7 @@ footer.ft{background:#070C1E;padding:64px 0 32px;color:rgba(255,255,255,0.65);po
       <div class="gw">
         <span class="eyebrow">PROCESS · 일하는 방식</span>
         <h1 class="p-h1"><em>체계화된 전문 프로세스</em>로<br>진행됩니다</h1>
-        <p class="p-lead">감이나 반복 작업이 아니라, 상황 진단에서 성과 관리까지 정해진 단계와 산출물로 일합니다. 각 단계의 기준과 결과물을 미리 공유해 고객사가 언제든 진행 상황을 확인할 수 있습니다.</p>
+        <p class="p-lead">감이나 반복 작업이 아니라, 정해진 프로세스에 따라 상황 진단에서 성과 관리까지 단계와 산출물로 일합니다. 각 단계의 기준과 결과물을 미리 공유해 고객사가 언제든 진행 상황을 확인할 수 있습니다.</p>
         <div class="hashes"><span class="hash"><i>#</i>상황_진단부터</span><span class="hash"><i>#</i>맞춤_플랜</span><span class="hash"><i>#</i>숫자로_확인하는_성과</span></div>
         <div class="hero-btns">
           <a href="#gc-cta" class="btn btn-gold">전문 컨설팅 상담 받기</a>
@@ -399,8 +399,8 @@ footer.ft{background:#070C1E;padding:64px 0 32px;color:rgba(255,255,255,0.65);po
         <h3 class="stg-h">상황 진단</h3>
         <p class="stg-q">“지금 우리는 어디에 서 있고, 무엇이 막고 있나요?”</p>
         <div class="stg-cols">
-          <div><h4>하는 일</h4><ul><li>사업·서비스 이해: 목표, 핵심 고객, 수익 구조 정리</li><li>현재 채널 현황: 검색 노출, 광고, SNS, 홈페이지 상태</li><li>경쟁사와 비교한 노출·메시지 차이</li><li>측정 환경 점검: 서치 콘솔, 분석 도구, 전환 추적 여부</li><li>AI 답변에서 브랜드가 어떻게 언급되는지 확인</li></ul></div>
-          <div><h4>이것을 확인합니다</h4><ul><li>검색·AI 답변에서의 노출 현황</li><li>AI 크롤러 접근과 기술 SEO 상태</li><li>기존 콘텐츠의 정보 구조와 신뢰 신호</li><li>문의로 이어지는 경로가 실제로 측정되는지</li></ul></div>
+          <div><p class="stg-lbl">하는 일</p><ul><li>사업·서비스 이해: 목표, 핵심 고객, 수익 구조 정리</li><li>현재 채널 현황: 검색 노출, 광고, SNS, 홈페이지 상태</li><li>경쟁사와 비교한 노출·메시지 차이</li><li>측정 환경 점검: 서치 콘솔, 분석 도구, 전환 추적 여부</li><li>AI 답변에서 브랜드가 어떻게 언급되는지 확인</li></ul></div>
+          <div><p class="stg-lbl">이것을 확인합니다</p><ul><li>검색·AI 답변에서의 노출 현황</li><li>AI 크롤러 접근과 기술 SEO 상태</li><li>기존 콘텐츠의 정보 구조와 신뢰 신호</li><li>문의로 이어지는 경로가 실제로 측정되는지</li></ul></div>
         </div>
         <div class="deliv"><b>산출물</b><span>진단 리포트</span><span>기회·위험 요약</span><span>우선 개선 항목</span></div>
       </div>
@@ -411,8 +411,8 @@ footer.ft{background:#070C1E;padding:64px 0 32px;color:rgba(255,255,255,0.65);po
         <h3 class="stg-h">맞춤 플랜 수립</h3>
         <p class="stg-q">“무엇을 먼저, 어떤 순서로, 어떤 기준으로 할까요?”</p>
         <div class="stg-cols">
-          <div><h4>하는 일</h4><ul><li>목표(KPI) 설정: 문의 수, 전환율, 유입, 브랜드 언급 등</li><li>채널 조합 결정: SEO · GEO · AEO · 콘텐츠 · 광고 · 홈페이지</li><li>예산과 일정에 맞춘 우선순위 정리</li><li>단계별 로드맵과 역할 분담 합의</li><li>성공 기준과 리포팅 방식 확정</li></ul></div>
-          <div><h4>이것을 확인합니다</h4><ul><li>목표가 사업 성과와 직접 연결되는지</li><li>지금 가진 자원으로 실현 가능한지</li><li>단기 성과와 장기 기반을 균형 있게 배치했는지</li></ul></div>
+          <div><p class="stg-lbl">하는 일</p><ul><li>목표(KPI) 설정: 문의 수, 전환율, 유입, 브랜드 언급 등</li><li>채널 조합 결정: SEO · GEO · AEO · 콘텐츠 · 광고 · 홈페이지</li><li>예산과 일정에 맞춘 우선순위 정리</li><li>단계별 로드맵과 역할 분담 합의</li><li>성공 기준과 리포팅 방식 확정</li></ul></div>
+          <div><p class="stg-lbl">이것을 확인합니다</p><ul><li>목표가 사업 성과와 직접 연결되는지</li><li>지금 가진 자원으로 실현 가능한지</li><li>단기 성과와 장기 기반을 균형 있게 배치했는지</li></ul></div>
         </div>
         <div class="deliv"><b>산출물</b><span>마케팅 플랜서</span><span>실행 로드맵</span><span>KPI 정의서</span></div>
       </div>
@@ -423,8 +423,8 @@ footer.ft{background:#070C1E;padding:64px 0 32px;color:rgba(255,255,255,0.65);po
         <h3 class="stg-h">타겟팅 설계</h3>
         <p class="stg-q">“누구의, 어떤 순간의 질문에 답해야 하나요?”</p>
         <div class="stg-cols">
-          <div><h4>하는 일</h4><ul><li>핵심 고객 정의와 페르소나 정리</li><li>고객 여정(인지 → 관심 → 비교 → 결정) 단계별 접점 지도</li><li>검색 의도와 질문 지도 작성: 검색창과 AI에게 묻는 문장 모두 포함</li><li>차별점(USP)과 메시지, 포지셔닝 정리</li><li>오디언스·지역·시간대 등 노출 조건 설정</li></ul></div>
-          <div><h4>이것을 확인합니다</h4><ul><li>고객이 실제로 쓰는 표현과 우리 메시지가 맞는지</li><li>여정 단계별로 비어 있는 콘텐츠가 어디인지</li><li>경쟁사와 구별되는 한 문장이 있는지</li></ul></div>
+          <div><p class="stg-lbl">하는 일</p><ul><li>핵심 고객 정의와 페르소나 정리</li><li>고객 여정(인지 → 관심 → 비교 → 결정) 단계별 접점 지도</li><li>검색 의도와 질문 지도 작성: 검색창과 AI에게 묻는 문장 모두 포함</li><li>차별점(USP)과 메시지, 포지셔닝 정리</li><li>오디언스·지역·시간대 등 노출 조건 설정</li></ul></div>
+          <div><p class="stg-lbl">이것을 확인합니다</p><ul><li>고객이 실제로 쓰는 표현과 우리 메시지가 맞는지</li><li>여정 단계별로 비어 있는 콘텐츠가 어디인지</li><li>경쟁사와 구별되는 한 문장이 있는지</li></ul></div>
         </div>
         <div class="deliv"><b>산출물</b><span>고객 정의서</span><span>여정·질문 지도</span><span>메시지 프레임</span></div>
       </div>
@@ -435,8 +435,8 @@ footer.ft{background:#070C1E;padding:64px 0 32px;color:rgba(255,255,255,0.65);po
         <h3 class="stg-h">콘텐츠 · 구축</h3>
         <p class="stg-q">“고객과 AI가 읽기 좋은 형태로 준비되어 있나요?”</p>
         <div class="stg-cols">
-          <div><h4>하는 일</h4><ul><li>질문형 콘텐츠 제작과 기존 글 개선</li><li>홈페이지 구조·랜딩 페이지 설계 및 제작</li><li>구조화 데이터, 메타 정보, canonical 등 기술 세팅</li><li>광고 소재와 랜딩 페이지 연결</li><li>전환 추적 태그 설치와 테스트</li></ul></div>
-          <div><h4>이것을 확인합니다</h4><ul><li>핵심 답이 질문 바로 아래에 있는지</li><li>모바일에서 정상 표시되고 속도가 적절한지</li><li>문의 버튼까지의 동선이 짧은지</li><li>측정 태그가 정확히 작동하는지</li></ul></div>
+          <div><p class="stg-lbl">하는 일</p><ul><li>질문형 콘텐츠 제작과 기존 글 개선</li><li>홈페이지 구조·랜딩 페이지 설계 및 제작</li><li>구조화 데이터, 메타 정보, canonical 등 기술 세팅</li><li>광고 소재와 랜딩 페이지 연결</li><li>전환 추적 태그 설치와 테스트</li></ul></div>
+          <div><p class="stg-lbl">이것을 확인합니다</p><ul><li>핵심 답이 질문 바로 아래에 있는지</li><li>모바일에서 정상 표시되고 속도가 적절한지</li><li>문의 버튼까지의 동선이 짧은지</li><li>측정 태그가 정확히 작동하는지</li></ul></div>
         </div>
         <div class="deliv"><b>산출물</b><span>콘텐츠 캘린더</span><span>랜딩 페이지·콘텐츠</span><span>세팅 체크리스트</span></div>
       </div>
@@ -447,8 +447,8 @@ footer.ft{background:#070C1E;padding:64px 0 32px;color:rgba(255,255,255,0.65);po
         <h3 class="stg-h">퍼포먼스 실행</h3>
         <p class="stg-q">“계획한 것을 실제로 돌리고, 숫자로 확인하고 있나요?”</p>
         <div class="stg-cols">
-          <div><h4>하는 일</h4><ul><li>SEO · GEO · AEO 최적화 운영과 콘텐츠 발행</li><li>검색광고 등 유료 채널 운영 (계획에 포함된 경우)</li><li>A/B 테스트로 제목·소재·페이지 개선</li><li>주간 점검과 이슈 대응</li><li>검색·AI 답변 노출을 같은 질문으로 반복 측정</li></ul></div>
-          <div><h4>이것을 확인합니다</h4><ul><li>목표 대비 진행 상황</li><li>클릭률·전환율에서 낮은 구간</li><li>광고·콘텐츠별 전환 단가</li><li>비정상적인 수치 변동</li></ul></div>
+          <div><p class="stg-lbl">하는 일</p><ul><li>SEO · GEO · AEO 최적화 운영과 콘텐츠 발행</li><li>검색광고 등 유료 채널 운영 (계획에 포함된 경우)</li><li>A/B 테스트로 제목·소재·페이지 개선</li><li>주간 점검과 이슈 대응</li><li>검색·AI 답변 노출을 같은 질문으로 반복 측정</li></ul></div>
+          <div><p class="stg-lbl">이것을 확인합니다</p><ul><li>목표 대비 진행 상황</li><li>클릭률·전환율에서 낮은 구간</li><li>광고·콘텐츠별 전환 단가</li><li>비정상적인 수치 변동</li></ul></div>
         </div>
         <div class="deliv"><b>산출물</b><span>실행 기록</span><span>테스트 결과</span><span>주간 점검 메모</span></div>
       </div>
@@ -459,8 +459,8 @@ footer.ft{background:#070C1E;padding:64px 0 32px;color:rgba(255,255,255,0.65);po
         <h3 class="stg-h">성과 관리 · 개선</h3>
         <p class="stg-q">“숫자가 무엇을 뜻하고, 다음에 무엇을 바꿔야 하나요?”</p>
         <div class="stg-cols">
-          <div><h4>하는 일</h4><ul><li>월간 리포트: 지표 요약과 해석, 다음 달 실행안</li><li>KPI 대비 성과 검토와 원인 분석</li><li>잘 된 것은 확대하고 안 된 것은 원인을 찾아 수정</li><li>분기별 재진단과 로드맵 갱신</li><li>알고리즘·AI 서비스 변화에 따른 전략 조정</li></ul></div>
-          <div><h4>이것을 확인합니다</h4><ul><li>수치 뒤의 이유(왜 올랐고 왜 내렸는가)</li><li>한 번의 캡처가 아니라 시간 흐름의 변화</li><li>고객사 의사결정에 필요한 정보가 담겼는지</li></ul></div>
+          <div><p class="stg-lbl">하는 일</p><ul><li>월간 리포트: 지표 요약과 해석, 다음 달 실행안</li><li>KPI 대비 성과 검토와 원인 분석</li><li>잘 된 것은 확대하고 안 된 것은 원인을 찾아 수정</li><li>분기별 재진단과 로드맵 갱신</li><li>알고리즘·AI 서비스 변화에 따른 전략 조정</li></ul></div>
+          <div><p class="stg-lbl">이것을 확인합니다</p><ul><li>수치 뒤의 이유(왜 올랐고 왜 내렸는가)</li><li>한 번의 캡처가 아니라 시간 흐름의 변화</li><li>고객사 의사결정에 필요한 정보가 담겼는지</li></ul></div>
         </div>
         <div class="deliv"><b>산출물</b><span>월간 리포트</span><span>개선 제안서</span><span>분기 로드맵</span></div>
       </div>
