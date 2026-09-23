@@ -197,8 +197,7 @@ header.top .tc.off{opacity:0.5;cursor:default;}
             </div>
             <div>
               <div class="mg-h">TOOLS</div>
-              <a href="#contact" class="tc"><b>무료 SEO 진단</b><span>검색 노출 현황과 개선 우선순위 확인</span></a>
-              <a href="GEO-Check.dc.html" class="tc"><b>GEO 엔티티 체크</b><span>AI 인용 준비도까지 함께 확인</span></a>
+              <a href="Crawler.dc.html" class="tc"><b>AI 크롤러 접근 점검</b><span>검색·AI 봇이 사이트를 읽을 수 있는지 확인</span></a>
             </div>
           </div></div>
         </div>
@@ -236,65 +235,126 @@ header.top .tc.off{opacity:0.5;cursor:default;}
   <section style="position:relative; background:var(--accent-dark); color:var(--bg); padding:160px 0 64px; overflow:hidden;">
     <div style="position:absolute; inset:0; background:radial-gradient(60% 90% at 88% 0%, rgba(212,169,76,0.16), transparent 65%), radial-gradient(50% 80% at 0% 100%, rgba(58,92,210,0.22), transparent 70%); pointer-events:none;"></div>
     <div class="container" style="position:relative; display:flex; flex-direction:column; gap:16px;">
-      <a href="Insights.dc.html" class="back-link" style="font-size:13px; color:rgba(247,245,239,0.6); display:inline-flex; align-items:center; gap:6px;">← 오월의꿈 인사이트로 돌아가기</a>
-      <span style="font-size:13px; letter-spacing:0.06em; color:var(--amber); font-weight:600; text-transform:uppercase;">SEO 가이드</span>
-      <h1 class="page-title" style="font-size:40px; line-height:1.35; color:#fff;">SEO(검색엔진최적화)란 무엇인가</h1>
-      <p style="font-size:16px; line-height:1.75; color:rgba(247,245,239,0.75); max-width:620px;">네이버와 구글이 여전히 강력한 검색 채널인 이유, 그리고 지금 SEO를 준비해야 하는 이유를 정리했습니다.</p>
+      <a href="Insights.dc.html" class="back-link" style="font-size:14px; color:rgba(247,245,239,0.6); display:inline-flex; align-items:center; gap:6px;">← 오월의꿈 인사이트로 돌아가기</a>
+      <span style="font-size:14px; letter-spacing:0.06em; color:var(--amber); font-weight:600; text-transform:uppercase;">SEO 가이드</span>
+      <h1 class="page-title" style="font-size:42px; line-height:1.35; color:#fff;">SEO(검색엔진최적화)란 무엇인가</h1>
+      <p style="font-size:17px; line-height:1.75; color:rgba(247,245,239,0.75); max-width:620px;">네이버와 구글이 여전히 강력한 검색 채널인 이유, 그리고 지금 SEO를 준비해야 하는 이유를 정리했습니다.</p>
     </div>
   </section>
 
   <section style="padding:80px 0;">
-    <div class="container reveal" style="display:flex; flex-direction:column; gap:16px;">
-      <h2 style="font-size:24px;">SEO, 기본부터 정리하면</h2>
-      <p style="font-size:16px; line-height:1.9; color:var(--muted);">검색엔진은 웹에 있는 수많은 페이지를 수집(크롤링)하고 분류(색인)한 뒤, 검색어를 입력한 사람의 의도에 가장 잘 맞는 순서로 결과를 보여줍니다. SEO는 이 전체 과정에 맞춰 웹사이트의 구조와 콘텐츠를 정비하는 활동입니다.</p>
-      <p style="font-size:16px; line-height:1.9; color:var(--muted);">예전에는 키워드를 얼마나 많이, 자연스럽게 배치했는지가 중요했습니다. 지금은 다릅니다. 구글은 이를 <span style="color:var(--accent); font-weight:700;">E-E-A-T</span>(경험Experience·전문성Expertise·권위성Authoritativeness·신뢰성Trustworthiness)라는 기준으로 설명합니다. 실제로 그 주제를 다뤄본 경험이 있는지, 전문적인 근거를 갖췄는지, 다른 곳에서도 인정받는 출처인지를 함께 평가합니다.</p>
-      <p style="font-size:16px; line-height:1.9; color:var(--muted);">그래서 SEO는 키워드 하나를 겨냥한 글쓰기가 아니라, 하나의 주제를 여러 각도에서 깊이 있게 다루는 <span style="color:var(--accent); font-weight:700;">토픽 클러스터</span> 구조로 접근해야 합니다. 개별 페이지가 아니라 사이트 전체가 그 주제의 권위 있는 출처로 인식되도록 만드는 것이 목표입니다.</p>
-      <p style="font-size:16px; line-height:1.9; color:var(--muted);">중요한 것은 '순위' 자체가 아니라, 실제로 검색하는 사람에게 필요한 정보를 정확한 시점에 보여주는 일입니다. 순위는 그 결과로 따라오는 지표에 가깝습니다.</p>
+    <div class="container reveal" style="display:flex; flex-direction:column; gap:28px;">
+      <h2 style="font-size:26px;">SEO, 기본부터 정리하면</h2>
+      <p style="font-size:clamp(30px,3.6vw,40px); line-height:1.3; font-weight:800; letter-spacing:-0.02em; margin:2px 0 4px;">SEO는 <span style="color:var(--accent);">'발견되는 기술'</span>입니다!</p>
+      <p style="font-size:17px; line-height:1.9; color:var(--muted);">검색엔진은 웹페이지를 수집하고 분류한 뒤, 검색 의도에 가장 잘 맞는 순서로 결과를 보여줍니다. SEO는 이 세 단계에 맞춰 사이트의 구조와 콘텐츠를 정비하는 활동입니다.</p>
+
+      <div style="position:relative; padding:16px 0 4px;">
+        <div style="position:absolute; top:58px; left:80px; right:80px; height:3px; background:repeating-linear-gradient(90deg, var(--accent) 0 10px, transparent 10px 19px); z-index:0;"></div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; position:relative; z-index:1;">
+          <div style="text-align:center;">
+            <div style="width:92px;height:92px;border-radius:50%;background:linear-gradient(135deg, var(--accent), var(--amber));display:flex;align-items:center;justify-content:center;margin:0 auto 16px;box-shadow:0 16px 32px rgba(168,134,57,0.4);">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.2" y2="16.2"></line></svg>
+            </div>
+            <b style="display:block;font-size:20px;">수집</b>
+            <span style="display:block;font-size:14px;color:var(--muted);margin-top:4px;">크롤링 Crawling</span>
+          </div>
+          <div style="text-align:center;">
+            <div style="width:92px;height:92px;border-radius:50%;background:linear-gradient(135deg, var(--accent), var(--amber));display:flex;align-items:center;justify-content:center;margin:0 auto 16px;box-shadow:0 16px 32px rgba(168,134,57,0.4);">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <b style="display:block;font-size:20px;">분류</b>
+            <span style="display:block;font-size:14px;color:var(--muted);margin-top:4px;">색인 Indexing</span>
+          </div>
+          <div style="text-align:center;">
+            <div style="width:92px;height:92px;border-radius:50%;background:linear-gradient(135deg, var(--accent), var(--amber));display:flex;align-items:center;justify-content:center;margin:0 auto 16px;box-shadow:0 16px 32px rgba(168,134,57,0.4);">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+            </div>
+            <b style="display:block;font-size:20px;">노출</b>
+            <span style="display:block;font-size:14px;color:var(--muted);margin-top:4px;">검색 결과 순위</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p style="font-size:16px; font-weight:700; margin-bottom:12px;">지금 검색엔진이 콘텐츠를 평가하는 기준, <span style="color:var(--accent);">E-E-A-T</span></p>
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px;">
+          <div class="card-hover" style="background:var(--surface); border:1px solid var(--border-soft); border-radius:10px; padding:18px;">
+            <div style="font-size:26px; font-weight:800; color:var(--accent); line-height:1;">E</div>
+            <b style="display:block; font-size:15px; margin-top:8px;">경험</b>
+            <span style="display:block; font-size:12px; color:var(--muted);">Experience</span>
+            <p style="font-size:13.5px; line-height:1.6; color:var(--ink-soft); margin-top:8px;">실제로 다뤄본 경험이 있는가</p>
+          </div>
+          <div class="card-hover" style="background:var(--surface); border:1px solid var(--border-soft); border-radius:10px; padding:18px;">
+            <div style="font-size:26px; font-weight:800; color:var(--accent); line-height:1;">E</div>
+            <b style="display:block; font-size:15px; margin-top:8px;">전문성</b>
+            <span style="display:block; font-size:12px; color:var(--muted);">Expertise</span>
+            <p style="font-size:13.5px; line-height:1.6; color:var(--ink-soft); margin-top:8px;">전문적인 근거를 갖췄는가</p>
+          </div>
+          <div class="card-hover" style="background:var(--surface); border:1px solid var(--border-soft); border-radius:10px; padding:18px;">
+            <div style="font-size:26px; font-weight:800; color:var(--accent); line-height:1;">A</div>
+            <b style="display:block; font-size:15px; margin-top:8px;">권위성</b>
+            <span style="display:block; font-size:12px; color:var(--muted);">Authoritativeness</span>
+            <p style="font-size:13.5px; line-height:1.6; color:var(--ink-soft); margin-top:8px;">다른 곳에서도 인정받는 출처인가</p>
+          </div>
+          <div class="card-hover" style="background:var(--surface); border:1px solid var(--border-soft); border-radius:10px; padding:18px;">
+            <div style="font-size:26px; font-weight:800; color:var(--accent); line-height:1;">T</div>
+            <b style="display:block; font-size:15px; margin-top:8px;">신뢰성</b>
+            <span style="display:block; font-size:12px; color:var(--muted);">Trustworthiness</span>
+            <p style="font-size:13.5px; line-height:1.6; color:var(--ink-soft); margin-top:8px;">믿을 수 있는 정보인가</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:16px; line-height:1.85; color:var(--ink-soft);">그래서 SEO는 키워드 하나를 겨냥한 글쓰기가 아니라, 하나의 주제를 여러 각도에서 다루는 <span style="color:var(--accent); font-weight:700;">토픽 클러스터</span> 구조로 접근해야 합니다. 개별 페이지가 아니라 사이트 전체가 그 주제의 권위 있는 출처로 인식되도록 만드는 것이 목표입니다.</p>
+
+      <div style="background:var(--accent-tint); border-left:3px solid var(--accent); border-radius:6px; padding:18px 22px;">
+        <p style="font-size:16px; line-height:1.8; color:var(--ink); font-weight:600;">중요한 것은 '순위' 자체가 아니라, 실제로 검색하는 사람에게 필요한 정보를 정확한 시점에 보여주는 일입니다. 순위는 그 결과로 따라오는 지표에 가깝습니다.</p>
+      </div>
     </div>
   </section>
 
   <section style="padding:80px 0; background:#F1EFE6;">
     <div class="container reveal" style="display:flex; flex-direction:column; gap:28px;">
-      <h2 style="font-size:24px;">SEO, 이렇게 준비하면 좋습니다</h2>
+      <h2 style="font-size:26px;">SEO, 이렇게 준비하면 좋습니다</h2>
       <div style="display:flex; flex-direction:column; gap:20px;">
 
         <div style="display:flex; gap:18px;">
-          <div style="width:32px;height:32px;border-radius:50%;background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0;">1</div>
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; flex-shrink:0;">1</div>
           <div>
-            <h3 style="font-size:17px; margin-bottom:6px;">검색 의도 분류</h3>
-            <p style="font-size:15px; line-height:1.75; color:var(--muted);">같은 키워드도 정보 탐색, 비교, 구매 등 의도가 다릅니다. <span style="color:var(--accent); font-weight:700;">정보형·상업형·거래형</span> 의도를 구분해, 각 의도에 맞는 콘텐츠 형식과 페이지 구조를 설계합니다.</p>
+            <h3 style="font-size:18px; margin-bottom:6px;">검색 의도 분류</h3>
+            <p style="font-size:16px; line-height:1.75; color:var(--muted);">같은 키워드도 정보 탐색, 비교, 구매 등 의도가 다릅니다. <span style="color:var(--accent); font-weight:700;">정보형·상업형·거래형</span> 의도를 구분해, 각 의도에 맞는 콘텐츠 형식과 페이지 구조를 설계합니다.</p>
           </div>
         </div>
 
         <div style="display:flex; gap:18px;">
-          <div style="width:32px;height:32px;border-radius:50%;background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0;">2</div>
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; flex-shrink:0;">2</div>
           <div>
-            <h3 style="font-size:17px; margin-bottom:6px;">토픽 클러스터·내부 링크 설계</h3>
-            <p style="font-size:15px; line-height:1.75; color:var(--muted);">하나의 핵심 주제(필러 페이지)를 중심으로 세부 주제(클러스터 콘텐츠)를 연결합니다. 내부 링크 구조가 명확할수록 검색엔진이 사이트의 전문성을 더 쉽게 이해합니다.</p>
+            <h3 style="font-size:18px; margin-bottom:6px;">토픽 클러스터·내부 링크 설계</h3>
+            <p style="font-size:16px; line-height:1.75; color:var(--muted);">하나의 핵심 주제(필러 페이지)를 중심으로 세부 주제(클러스터 콘텐츠)를 연결합니다. 내부 링크 구조가 명확할수록 검색엔진이 사이트의 전문성을 더 쉽게 이해합니다.</p>
           </div>
         </div>
 
         <div style="display:flex; gap:18px;">
-          <div style="width:32px;height:32px;border-radius:50%;background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0;">3</div>
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; flex-shrink:0;">3</div>
           <div>
-            <h3 style="font-size:17px; margin-bottom:6px;">기술 SEO·Core Web Vitals</h3>
-            <p style="font-size:15px; line-height:1.75; color:var(--muted);">로딩 속도(LCP), 상호작용 반응성(INP), 레이아웃 안정성(CLS) 같은 <span style="color:var(--accent); font-weight:700;">Core Web Vitals</span> 지표와 모바일 대응, 크롤링 효율을 점검합니다. <span style="color:var(--accent); font-weight:700;">구조화 데이터(JSON-LD)</span>로 검색엔진이 콘텐츠를 정확히 이해하도록 돕습니다.</p>
+            <h3 style="font-size:18px; margin-bottom:6px;">기술 SEO·Core Web Vitals</h3>
+            <p style="font-size:16px; line-height:1.75; color:var(--muted);">로딩 속도(LCP), 상호작용 반응성(INP), 레이아웃 안정성(CLS) 같은 <span style="color:var(--accent); font-weight:700;">Core Web Vitals</span> 지표와 모바일 대응, 크롤링 효율을 점검합니다. <span style="color:var(--accent); font-weight:700;">구조화 데이터(JSON-LD)</span>로 검색엔진이 콘텐츠를 정확히 이해하도록 돕습니다.</p>
           </div>
         </div>
 
         <div style="display:flex; gap:18px;">
-          <div style="width:32px;height:32px;border-radius:50%;background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0;">4</div>
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; flex-shrink:0;">4</div>
           <div>
-            <h3 style="font-size:17px; margin-bottom:6px;">E-E-A-T 신뢰 신호 구축</h3>
-            <p style="font-size:15px; line-height:1.75; color:var(--muted);">저자 정보, 출처 표기, 전문성을 뒷받침하는 근거를 꾸준히 쌓습니다. 외부에서 인용되거나 언급되는 빈도도 신뢰도를 판단하는 중요한 신호입니다.</p>
+            <h3 style="font-size:18px; margin-bottom:6px;">E-E-A-T 신뢰 신호 구축</h3>
+            <p style="font-size:16px; line-height:1.75; color:var(--muted);">저자 정보, 출처 표기, 전문성을 뒷받침하는 근거를 꾸준히 쌓습니다. 외부에서 인용되거나 언급되는 빈도도 신뢰도를 판단하는 중요한 신호입니다.</p>
           </div>
         </div>
 
         <div style="display:flex; gap:18px;">
-          <div style="width:32px;height:32px;border-radius:50%;background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0;">5</div>
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; flex-shrink:0;">5</div>
           <div>
-            <h3 style="font-size:17px; margin-bottom:6px;">데이터 기반 재조정</h3>
-            <p style="font-size:15px; line-height:1.75; color:var(--muted);">순위와 유입뿐 아니라, 어떤 페이지가 실제로 전환으로 이어지는지까지 함께 측정합니다. 그 결과를 바탕으로 우선순위를 다시 조정합니다.</p>
+            <h3 style="font-size:18px; margin-bottom:6px;">데이터 기반 재조정</h3>
+            <p style="font-size:16px; line-height:1.75; color:var(--muted);">순위와 유입뿐 아니라, 어떤 페이지가 실제로 전환으로 이어지는지까지 함께 측정합니다. 그 결과를 바탕으로 우선순위를 다시 조정합니다.</p>
           </div>
         </div>
 
@@ -304,22 +364,22 @@ header.top .tc.off{opacity:0.5;cursor:default;}
 
   <section style="padding:80px 0;">
     <div class="container reveal" style="display:flex; flex-direction:column; gap:24px;">
-      <h2 style="font-size:24px;">SEO, 이런 오해는 주의해야 합니다</h2>
+      <h2 style="font-size:26px;">SEO, 이런 오해는 주의해야 합니다</h2>
       <div style="display:flex; flex-direction:column; gap:14px;">
 
         <div class="card-hover" style="background:var(--surface); border:1px solid var(--border-soft); border-radius:10px; padding:20px 24px;">
-          <p style="font-size:16px; font-weight:800; color:var(--ink); margin-bottom:6px;">"키워드를 많이 넣을수록 좋다?"</p>
-          <p style="font-size:15px; line-height:1.7; color:var(--ink);"><span style="color:var(--accent); font-weight:700;">실제로는 —</span> 과거에는 통했지만 지금은 오히려 품질 평가에서 감점 요인이 될 수 있습니다. 자연스러운 문맥이 우선입니다.</p>
+          <p style="font-size:17px; font-weight:800; color:var(--ink); margin-bottom:6px;">"키워드를 많이 넣을수록 좋다?"</p>
+          <p style="font-size:16px; line-height:1.7; color:var(--ink);"><span style="color:var(--accent); font-weight:700;">실제로는 —</span> 과거에는 통했지만 지금은 오히려 품질 평가에서 감점 요인이 될 수 있습니다. 자연스러운 문맥이 우선입니다.</p>
         </div>
 
         <div class="card-hover" style="background:var(--surface); border:1px solid var(--border-soft); border-radius:10px; padding:20px 24px;">
-          <p style="font-size:16px; font-weight:800; color:var(--ink); margin-bottom:6px;">"링크는 많을수록 좋다?"</p>
-          <p style="font-size:15px; line-height:1.7; color:var(--ink);"><span style="color:var(--accent); font-weight:700;">실제로는 —</span> 무분별하게 확보한 링크는 오히려 사이트 신뢰도를 떨어뜨릴 수 있습니다. 관련성과 출처의 신뢰도가 더 중요합니다.</p>
+          <p style="font-size:17px; font-weight:800; color:var(--ink); margin-bottom:6px;">"링크는 많을수록 좋다?"</p>
+          <p style="font-size:16px; line-height:1.7; color:var(--ink);"><span style="color:var(--accent); font-weight:700;">실제로는 —</span> 무분별하게 확보한 링크는 오히려 사이트 신뢰도를 떨어뜨릴 수 있습니다. 관련성과 출처의 신뢰도가 더 중요합니다.</p>
         </div>
 
         <div class="card-hover" style="background:var(--surface); border:1px solid var(--border-soft); border-radius:10px; padding:20px 24px;">
-          <p style="font-size:16px; font-weight:800; color:var(--ink); margin-bottom:6px;">"한 번 최적화하면 끝난다?"</p>
-          <p style="font-size:15px; line-height:1.7; color:var(--ink);"><span style="color:var(--accent); font-weight:700;">실제로는 —</span> 검색 알고리즘은 계속 업데이트됩니다. 정기적인 점검과 콘텐츠 갱신이 필요합니다.</p>
+          <p style="font-size:17px; font-weight:800; color:var(--ink); margin-bottom:6px;">"한 번 최적화하면 끝난다?"</p>
+          <p style="font-size:16px; line-height:1.7; color:var(--ink);"><span style="color:var(--accent); font-weight:700;">실제로는 —</span> 검색 알고리즘은 계속 업데이트됩니다. 정기적인 점검과 콘텐츠 갱신이 필요합니다.</p>
         </div>
 
       </div>
@@ -328,16 +388,16 @@ header.top .tc.off{opacity:0.5;cursor:default;}
 
   <section style="padding:80px 0;">
     <div class="container reveal" style="display:flex; flex-direction:column; gap:16px; align-items:flex-start;">
-      <span style="font-size:13px; font-weight:600; color:var(--accent); letter-spacing:0.04em; text-transform:uppercase;">오월의꿈의 SEO 서비스</span>
-      <h2 style="font-size:24px;">키워드 전략부터 리포트까지 함께 관리합니다</h2>
-      <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px; font-size:15px; color:var(--ink-soft);">
+      <span style="font-size:14px; font-weight:600; color:var(--accent); letter-spacing:0.04em; text-transform:uppercase;">오월의꿈의 SEO 서비스</span>
+      <h2 style="font-size:26px;">키워드 전략부터 리포트까지 함께 관리합니다</h2>
+      <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px; font-size:16px; color:var(--ink-soft);">
         <li>키워드·콘텐츠 전략 수립</li>
         <li>온페이지·기술 SEO 점검</li>
         <li>정기 성과 리포트</li>
       </ul>
       <div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:10px;">
-        <a href="#contact" class="btn-primary" style="background:var(--accent); color:#fff; font-weight:700; font-size:15px; padding:16px 28px; border-radius:4px;">전문 컨설팅 상담 받기</a>
-        <a href="Main.dc.html" class="btn-home-l" style="display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); color:var(--ink); font-weight:700; font-size:14px; padding:13px 24px; border-radius:4px;">메인 홈으로 가기 <span aria-hidden="true">→</span></a>
+        <a href="#contact" class="btn-primary" style="background:var(--accent); color:#fff; font-weight:700; font-size:16px; padding:16px 28px; border-radius:4px;">전문 컨설팅 상담 받기</a>
+        <a href="Main.dc.html" class="btn-home-l" style="display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); color:var(--ink); font-weight:700; font-size:15px; padding:13px 24px; border-radius:4px;">메인 홈으로 가기 <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -368,7 +428,7 @@ header.top .tc.off{opacity:0.5;cursor:default;}
   </footer>
 
   <div class="float-rail" style="position:fixed; right:20px; top:50%; transform:translateY(-50%); z-index:70; display:flex; flex-direction:column; gap:10px;">
-    <a href="#contact" class="rail-btn" style="width:72px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:14px 8px; border-radius:10px; background:var(--surface); border:1px solid var(--border); color:var(--accent); box-shadow:0 10px 24px rgba(8,10,24,0.12);">
+    <a href="Contact.dc.html" class="rail-btn" style="width:72px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:14px 8px; border-radius:10px; background:var(--surface); border:1px solid var(--border); color:var(--accent); box-shadow:0 10px 24px rgba(8,10,24,0.12);">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l4 4v14H7z"></path><path d="M15 3v4h4"></path><line x1="10" y1="12" x2="16" y2="12"></line><line x1="10" y1="16" x2="16" y2="16"></line></svg>
       <span style="font-size:11px; font-weight:600; line-height:1.3; text-align:center;">상세<br>문의</span>
     </a>
