@@ -54,6 +54,12 @@ ul,ol{margin:0;}
   .page-title{font-size:32px !important;}
   .float-rail{display:none !important;}
 }
+@media (max-width:640px){
+  .eeat-grid{grid-template-columns:repeat(2,1fr) !important;}
+}
+@media (max-width:420px){
+  .eeat-grid{grid-template-columns:1fr !important;}
+}
 .nav-item:hover .mega-panel{display:block;}
 
 .reveal{opacity:0; transform:translateY(18px); transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);}
@@ -378,7 +384,7 @@ header.top .tc.off{opacity:0.5;cursor:default;}
 
       <div style="border:1.5px solid var(--accent); border-radius:16px; padding:32px 28px; background:linear-gradient(180deg, rgba(212,169,76,0.08), rgba(212,169,76,0.01));">
         <p style="font-size:21px; font-weight:800; margin:0 0 22px; letter-spacing:-0.01em;">지금 검색엔진이 콘텐츠를 평가하는 핵심 기준, <span style="color:var(--accent);">E-E-A-T</span></p>
-        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
+        <div class="eeat-grid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
           <div class="card-hover" style="background:var(--surface); border:1px solid var(--border-soft); border-top:4px solid var(--accent); border-radius:10px; padding:24px 20px;">
             <div style="font-size:42px; font-weight:800; color:var(--accent); line-height:1;">E</div>
             <b style="display:block; font-size:17px; margin-top:12px;">경험</b>
@@ -497,7 +503,7 @@ header.top .tc.off{opacity:0.5;cursor:default;}
         <li>정기 성과 리포트</li>
       </ul>
       <div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:10px;">
-        <a href="#contact" class="btn-primary" style="background:var(--accent); color:#fff; font-weight:700; font-size:16px; padding:16px 28px; border-radius:4px;">전문 컨설팅 상담 받기</a>
+        <a href="Contact.dc.html" class="btn-primary" style="background:var(--accent); color:#fff; font-weight:700; font-size:16px; padding:16px 28px; border-radius:4px;">전문 컨설팅 상담 받기</a>
         <a href="Main.dc.html" class="btn-home-l" style="display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); color:var(--ink); font-weight:700; font-size:15px; padding:13px 24px; border-radius:4px;">메인 홈으로 가기 <span aria-hidden="true">→</span></a>
       </div>
     </div>
