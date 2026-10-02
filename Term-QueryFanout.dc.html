@@ -89,6 +89,16 @@ header.top{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(10,17,
 .mm-panel a{display:block;padding:17px 2px;color:#fff;font-size:19px;font-weight:700;border-bottom:1px solid rgba(255,255,255,0.12);text-decoration:none;}
 .mm-panel a:first-of-type{color:var(--accent);}
 .mm-panel a.mm-cta{margin-top:20px;text-align:center;border:0;border-radius:10px;background:var(--accent);color:#08102a;padding:16px 2px;}
+.mm-acc{border-bottom:1px solid rgba(255,255,255,0.12);}
+.mm-acc-h{display:flex;align-items:center;justify-content:space-between;width:100%;padding:17px 2px;background:none;border:0;color:#fff;font-size:19px;font-weight:700;font-family:inherit;cursor:pointer;text-align:left;}
+.mm-acc-ar{flex-shrink:0;transition:transform .3s var(--ease,ease);}
+.mm-acc-h[aria-expanded="true"] .mm-acc-ar{transform:rotate(180deg);}
+.mm-acc-body{display:none;padding:0 0 14px;}
+.mm-acc-body.open{display:block;}
+.mm-acc-grp{font-size:11px;font-weight:800;letter-spacing:0.08em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin:14px 0 6px 4px;}
+.mm-acc-body a{display:block;padding:11px 4px 11px 16px;color:rgba(255,255,255,0.85);font-size:15.5px;font-weight:600;border-bottom:0;text-decoration:none;}
+.mm-acc-tool{margin-top:4px;background:rgba(212,169,76,0.1);border:1px solid rgba(212,169,76,0.4);border-radius:8px;color:var(--accent) !important;font-weight:700 !important;padding:11px 14px !important;}
+
 
 
 .qi-modal{display:none;position:fixed;inset:0;z-index:600;background:rgba(6,10,26,0.72);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;}
@@ -465,10 +475,66 @@ footer.ft{background:#070C1E;padding:64px 0 32px;color:rgba(255,255,255,0.65);po
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
     </button>
     <a href="Main.dc.html">오월의꿈</a>
-    <a href="GEO.dc.html">GEO</a>
-    <a href="AEO.dc.html">AEO</a>
-    <a href="SEO.dc.html">SEO</a>
-    <a href="WebBuild.dc.html">홈페이지 제작</a>
+    <div class="mm-acc">
+      <button type="button" class="mm-acc-h" aria-expanded="false">GEO<svg class="mm-acc-ar" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="mm-acc-body">
+        <div class="mm-acc-grp">GEO 이해하기</div>
+<a href="GEO.dc.html">GEO 소개</a>
+<a href="Glossary.dc.html">GEO 용어사전</a>
+<div class="mm-acc-grp">실무·서비스</div>
+<a href="Crawler.dc.html">AI 크롤러 접근 점검</a>
+<a href="Process.dc.html">GEO 운영 프로세스</a>
+<div class="mm-acc-grp">TOOLS</div>
+<a href="Keyword.dc.html" class="mm-acc-tool">키워드 검색량 조회</a>
+<a href="GEO-Check.dc.html" class="mm-acc-tool">GEO 엔티티 체크</a>
+      </div>
+    </div>
+    <div class="mm-acc">
+      <button type="button" class="mm-acc-h" aria-expanded="false">AEO<svg class="mm-acc-ar" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="mm-acc-body">
+        <div class="mm-acc-grp">AEO 이해하기</div>
+<a href="AEO.dc.html">AEO 소개</a>
+<a href="Glossary.dc.html">AEO 용어사전</a>
+<div class="mm-acc-grp">실무·서비스</div>
+<a href="QContent.dc.html">질문형 콘텐츠 설계</a>
+<a href="Process.dc.html">AEO 운영 프로세스</a>
+<div class="mm-acc-grp">TOOLS</div>
+<a href="Keyword.dc.html" class="mm-acc-tool">키워드 검색량 조회</a>
+<a href="AEOCheck.dc.html" class="mm-acc-tool">AEO 체크리스트</a>
+      </div>
+    </div>
+    <div class="mm-acc">
+      <button type="button" class="mm-acc-h" aria-expanded="false">SEO<svg class="mm-acc-ar" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="mm-acc-body">
+        <div class="mm-acc-grp">SEO 이해하기</div>
+<a href="SEO.dc.html">SEO 소개</a>
+<a href="Insights.dc.html">검색 인사이트</a>
+<a href="Glossary.dc.html">SEO 용어사전</a>
+<div class="mm-acc-grp">실무·서비스</div>
+<a href="Keyword.dc.html">키워드·검색 의도 분석</a>
+<a href="TechSeo.dc.html">기술 SEO 점검</a>
+<a href="Process.dc.html">SEO 운영 프로세스</a>
+<div class="mm-acc-grp">TOOLS</div>
+<a href="Keyword.dc.html" class="mm-acc-tool">키워드 검색량 조회</a>
+<a href="Crawler.dc.html" class="mm-acc-tool">AI 크롤러 접근 점검</a>
+      </div>
+    </div>
+    <div class="mm-acc">
+      <button type="button" class="mm-acc-h" aria-expanded="false">홈페이지 제작<svg class="mm-acc-ar" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="mm-acc-body">
+        <div class="mm-acc-grp">제작 서비스</div>
+<a href="WebBuild.dc.html">홈페이지 제작</a>
+<a href="Process.dc.html">제작 프로세스</a>
+<a href="Portfolio.dc.html">포트폴리오</a>
+<a href="Industry.dc.html">업종별 제작</a>
+<div class="mm-acc-grp">제작 이후</div>
+<a href="Renewal.dc.html">홈페이지 리뉴얼</a>
+<a href="Maintenance.dc.html">유지보수·운영</a>
+<div class="mm-acc-grp">TOOLS</div>
+<a href="Keyword.dc.html" class="mm-acc-tool">키워드 검색량 조회</a>
+<a href="#gc-cta" class="mm-acc-tool">제작 상담 신청</a>
+      </div>
+    </div>
     <a href="Process.dc.html">프로세스</a>
     <a href="Insights.dc.html">인사이트</a>
     <a href="About.dc.html">회사소개</a>
@@ -631,6 +697,14 @@ class Component extends DCLogic {
       mmBtn.addEventListener('click', () => { mmPanel.classList.contains('open') ? mmClose() : mmOpen(); });
       if (mmX) mmX.addEventListener('click', mmClose);
       mmPanel.querySelectorAll('a').forEach((a) => a.addEventListener('click', mmClose));
+      mmPanel.querySelectorAll('.mm-acc-h').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const body = btn.nextElementSibling;
+          const isOpen = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+          if (body) body.classList.toggle('open', !isOpen);
+        });
+      });
       window.addEventListener('resize', () => { if (window.innerWidth > 900 && mmPanel.classList.contains('open')) mmClose(); });
     }
 
